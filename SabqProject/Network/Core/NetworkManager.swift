@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import Moya
+
+typealias StatusCode = Int
+
+class NetworkManager {
+    
+    static var shared: NetworkManager!
+    
+    var networkConfig: NetworkDefaults!
+    
+    let provider: MoyaProvider<MultiTarget>
+    
+    init(config: NetworkDefaults = NetworkDefaults.defaults) {
+        self.networkConfig = config
+        
+        let headerPlugin = StaticHeaderPlugin(
+            headers: [:])
+        
+        provider = MoyaProvider<MultiTarget>(//manager: ,
+            plugins: [headerPlugin, NetworkLoggerPlugin(verbose: true)])
+    }
+    
+}

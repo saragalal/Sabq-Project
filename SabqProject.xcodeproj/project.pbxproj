@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,11 @@
 		9205544523588E5F00F3079C /* DetailsSceneModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205544423588E5F00F3079C /* DetailsSceneModelProtocol.swift */; };
 		9205544723588E7200F3079C /* DetailsScenePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205544623588E7200F3079C /* DetailsScenePresenterProtocol.swift */; };
 		9205544923588F3A00F3079C /* DetailsViewAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205544823588F3A00F3079C /* DetailsViewAdaptor.swift */; };
+		9205544B2358920900F3079C /* StaticHeaderPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205544A2358920900F3079C /* StaticHeaderPlugin.swift */; };
+		9205544E2358964B00F3079C /* HomeFirstSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9205544C2358964B00F3079C /* HomeFirstSectionViewController.swift */; };
+		9205544F2358964B00F3079C /* HomeFirstSectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9205544D2358964B00F3079C /* HomeFirstSectionViewController.xib */; };
+		92055451235899AC00F3079C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92055450235899AC00F3079C /* UIColorExtension.swift */; };
+		920554532358ACAE00F3079C /* SliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920554522358ACAE00F3079C /* SliderInfo.swift */; };
 		92D95D9D235754C7009B27A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D95D9C235754C7009B27A5 /* AppDelegate.swift */; };
 		92D95DA4235754C7009B27A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D95DA3235754C7009B27A5 /* Assets.xcassets */; };
 		92D95DA7235754C7009B27A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D95DA5235754C7009B27A5 /* LaunchScreen.storyboard */; };
@@ -92,6 +97,11 @@
 		9205544423588E5F00F3079C /* DetailsSceneModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSceneModelProtocol.swift; sourceTree = "<group>"; };
 		9205544623588E7200F3079C /* DetailsScenePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScenePresenterProtocol.swift; sourceTree = "<group>"; };
 		9205544823588F3A00F3079C /* DetailsViewAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewAdaptor.swift; sourceTree = "<group>"; };
+		9205544A2358920900F3079C /* StaticHeaderPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticHeaderPlugin.swift; sourceTree = "<group>"; };
+		9205544C2358964B00F3079C /* HomeFirstSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFirstSectionViewController.swift; sourceTree = "<group>"; };
+		9205544D2358964B00F3079C /* HomeFirstSectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFirstSectionViewController.xib; sourceTree = "<group>"; };
+		92055450235899AC00F3079C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		920554522358ACAE00F3079C /* SliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderInfo.swift; sourceTree = "<group>"; };
 		92D95D99235754C7009B27A5 /* SabqProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SabqProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D95D9C235754C7009B27A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D95DA3235754C7009B27A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,7 +177,6 @@
 				4961A30E4D25CB03135DF6DA /* Pods-SabqProjectUITests.debug.xcconfig */,
 				73F84F3B5D3FE27C3292C342 /* Pods-SabqProjectUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -186,6 +195,7 @@
 			children = (
 				9205541623584D5400F3079C /* NetworkDefaults.swift */,
 				9205541A23584DA400F3079C /* NetworkManager.swift */,
+				9205544A2358920900F3079C /* StaticHeaderPlugin.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				9205542623586CF000F3079C /* UserDefaults.swift */,
+				92055450235899AC00F3079C /* UIColorExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -358,9 +369,11 @@
 		92D95DDA23575BE3009B27A5 /* HomeSceneView */ = {
 			isa = PBXGroup;
 			children = (
-				92D95DCE23575B81009B27A5 /* HomeSceneViewController.xib */,
-				92D95DCD23575B81009B27A5 /* HomeSceneViewController.swift */,
 				9205543F2358783600F3079C /* HomeSceneViewAdptor.swift */,
+				92D95DCD23575B81009B27A5 /* HomeSceneViewController.swift */,
+				92D95DCE23575B81009B27A5 /* HomeSceneViewController.xib */,
+				9205544C2358964B00F3079C /* HomeFirstSectionViewController.swift */,
+				9205544D2358964B00F3079C /* HomeFirstSectionViewController.xib */,
 			);
 			path = HomeSceneView;
 			sourceTree = "<group>";
@@ -447,6 +460,7 @@
 		92D95DE823575D91009B27A5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				920554522358ACAE00F3079C /* SliderInfo.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -563,6 +577,7 @@
 				92D95DA4235754C7009B27A5 /* Assets.xcassets in Resources */,
 				92D95DD423575B95009B27A5 /* DetailsSceneViewController.xib in Resources */,
 				92D95DD023575B81009B27A5 /* HomeSceneViewController.xib in Resources */,
+				9205544F2358964B00F3079C /* HomeFirstSectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +694,7 @@
 				9205541E2358690000F3079C /* AppDelegate+Extensions.swift in Sources */,
 				9205544523588E5F00F3079C /* DetailsSceneModelProtocol.swift in Sources */,
 				9205542D23586E1900F3079C /* BasePresenter.swift in Sources */,
+				9205544E2358964B00F3079C /* HomeFirstSectionViewController.swift in Sources */,
 				9205543723586E9300F3079C /* HomeSceneViewProtocol.swift in Sources */,
 				92055422235869BB00F3079C /* HomeSceneModule.swift in Sources */,
 				9205541B23584DA400F3079C /* NetworkManager.swift in Sources */,
@@ -689,6 +705,7 @@
 				9205542923586DED00F3079C /* BaseViewController.swift in Sources */,
 				9205544323588E4900F3079C /* DetailsSceneViewProtocol.swift in Sources */,
 				92D95DE023575C98009B27A5 /* DetailsSceneModel.swift in Sources */,
+				92055451235899AC00F3079C /* UIColorExtension.swift in Sources */,
 				9205542523586A4100F3079C /* DetailsSceneModule.swift in Sources */,
 				9205541723584D5400F3079C /* NetworkDefaults.swift in Sources */,
 				9205542B23586E0700F3079C /* BaseModel.swift in Sources */,
@@ -697,8 +714,10 @@
 				92D95DD823575BC4009B27A5 /* HomeSceneModel.swift in Sources */,
 				9205543923586EA200F3079C /* HomeSceneModelProtocol.swift in Sources */,
 				9205544923588F3A00F3079C /* DetailsViewAdaptor.swift in Sources */,
+				920554532358ACAE00F3079C /* SliderInfo.swift in Sources */,
 				92D95DD623575BAD009B27A5 /* HomeScenePresenter.swift in Sources */,
 				92D95DE223575CAF009B27A5 /* DetailsScenePresenter.swift in Sources */,
+				9205544B2358920900F3079C /* StaticHeaderPlugin.swift in Sources */,
 				92D95D9D235754C7009B27A5 /* AppDelegate.swift in Sources */,
 				9205543023586E3300F3079C /* BaseViewProtocol.swift in Sources */,
 			);
