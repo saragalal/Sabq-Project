@@ -26,7 +26,7 @@ class NetworkManager {
             headers: [:])
         
         provider = MoyaProvider<MultiTarget>(//manager: ,
-            plugins: [headerPlugin, NetworkLoggerPlugin(verbose: true)])
+            plugins: [headerPlugin, NetworkLoggerPlugin(verbose: false)])
     }
     
 }

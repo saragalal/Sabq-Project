@@ -7,69 +7,107 @@
 //
 
 import UIKit
-
+import Moya
 class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol ,viewAdaptorDelegate{
-    
-    @IBOutlet weak var sliderView: UIView!
-    var pageViewController: UIPageViewController!
-    //var slides = [SliderInfo]()
-    var slides = ["", "" , ""]
+    //SectionOneSlider
+    //ScetionThreeCollectionview
+    @IBOutlet weak var homeTableView: UITableView!
+    var results: HomeMaterialResponse?
+    var videoResp: [Comics?]?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        self.pageViewController.dataSource = self
-        self.restartAction(self)
-        self.addChild(self.pageViewController)
-        self.pageViewController.view.frame = self.sliderView.frame
-        let views = [
-            "pg": self.pageViewController.view
-        ]
-        for (_, v) in views {
-            v!.translatesAutoresizingMaskIntoConstraints = false
-            self.sliderView.addSubview(v!)
-        }
-    }
-    func restartAction(_ sender: AnyObject) {
-        self.pageViewController.setViewControllers([self.viewControllerAtIndex(index: 0)], direction: .forward, animated: true, completion: nil)
-    }
-    func viewControllerAtIndex(index: Int) -> HomeFirstSectionViewController {
-        if (slides.count == 0) || (index >= slides.count) {
-            return HomeFirstSectionViewController(nibName: "HomeFirstSectionViewController", bundle: .main)
-        }
-        let vc = HomeFirstSectionViewController(nibName: "HomeFirstSectionViewController", bundle: .main)
-        vc.pageIndex = index
-        return vc
+        homeTableView.register(UINib(nibName: "SliderTableViewCell", bundle: nil), forCellReuseIdentifier: "SliderTableViewCell")
+        homeTableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
+       homeTableView.register(UINib(nibName: "HomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeVideoTableViewCell")
+        homeTableView.dataSource = self
+        homeTableView.delegate = self
+        self.homeTableView.estimatedRowHeight = 88.0
+        self.homeTableView.rowHeight = UITableView.automaticDimension
+        NetworkManager.shared.getHomePageMaterial(completion: { (result, status) in
+            switch result {
+            case .success(let response):
+              self.results = response
+              self.homeTableView.reloadData()
+              NetworkManager.shared.getHomePageVideo { (result, status) in
+                switch result {
+                case .success(let response):
+                    print(response)
+                    self.videoResp = response.comics
+                    if self.videoResp?.count != 0 {
+                        let obj = Materials(type: "video")
+                       
+                        self.results?.materials?.insert(obj, at: 4)
+                       
+                        self.homeTableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
+                  }
+                }
+            case .failure(let error):
+                print(error)
+            }
+            })
+       
     }
 }
-extension HomeSceneViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! HomeFirstSectionViewController
-        var index = vc.pageIndex as Int
-        if (index == 0 || index == NSNotFound) {
-            return nil
-        }
-        index -= 1
-        return self.viewControllerAtIndex(index: index)
+
+extension HomeSceneViewController: UITableViewDataSource ,UITableViewDelegate{
+  
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! HomeFirstSectionViewController
-        var index = vc.pageIndex as Int
-        if (index == NSNotFound) {
-            return nil
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            if (results?.slider?.count) != nil {
+            return 1
+          }
+        } else {
+          if let cellNumber = results?.materials?.count {
+          return cellNumber
         }
-        index += 1
-        if (index == slides.count) {
-            return nil
+    }
+         return 0
+}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if let cell  = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as? SliderTableViewCell{
+                if let sliderArray = results?.slider {
+                cell.configureSliderCell(sliderArray: sliderArray)
+              return cell
+                }
+            }
+             fatalError()
         }
-        return self.viewControllerAtIndex(index: index)
+        else {
+            if results?.materials?[indexPath.row]?.type == "news" {
+                if let cell  = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell{
+                    cell.configureCell(item: results?.materials?[indexPath.row])
+                    return cell
+                }
+                fatalError()
+           } else if results?.materials?[indexPath.row]?.type == "video" {
+                if let cell  = tableView.dequeueReusableCell(withIdentifier: "HomeVideoTableViewCell", for: indexPath) as? HomeVideoTableViewCell{
+                    if videoResp != nil {
+                  cell.configureCell(videos: videoResp)
+                    }
+                    return cell
+                }
+                 fatalError()
+            }
+            fatalError()
+         }
     }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return slides.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 520
+        }
+        if indexPath.section == 1{
+            if results?.materials?[indexPath.row]?.type == "video" {
+                return 300
+            }
+        }
+        return UITableView.automaticDimension
     }
 }

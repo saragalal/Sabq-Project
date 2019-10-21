@@ -9,9 +9,9 @@
 import Foundation
 
 struct NetworkDefaults {
-    var baseUrl: String = "https://api.themoviedb.org/3"
-    var apiKey: String = "1a45f741aada87874aacfbeb73119bae"
-    var language : String = "en-US"
+    var baseUrl: String = "https://stage.sabq.org/api"
+    var apiKey: String = "64136909d656d1d3201c552d4f3a6af3"
+    var language : String = "ar-EG"
     static var `defaults` : NetworkDefaults {
         let instance = NetworkDefaults()
         return instance

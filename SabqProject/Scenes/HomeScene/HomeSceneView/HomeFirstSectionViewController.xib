@@ -13,6 +13,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeFirstSectionViewController" customModule="SabqProject" customModuleProvider="target">
             <connections>
+                <outlet property="bodyLabel" destination="i0J-di-Hva" id="KkI-UV-JEN"/>
+                <outlet property="imgSlider" destination="dVS-qe-gY7" id="cpI-PT-ZYR"/>
+                <outlet property="numberLabel" destination="dth-d1-q5F" id="hhY-YA-uCe"/>
+                <outlet property="timeLabel" destination="RXy-UR-oEp" id="wlE-PL-Ppm"/>
+                <outlet property="titleLabel" destination="BgJ-91-w50" id="cCq-eR-ePh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,26 +27,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_slider_img" translatesAutoresizingMaskIntoConstraints="NO" id="dVS-qe-gY7">
-                    <rect key="frame" x="0.0" y="20" width="375" height="240"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="240" id="4ae-OA-Ag2"/>
+                        <constraint firstAttribute="height" constant="250" id="oyn-OX-fep"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;أديب&quot; يحاول أن يفهم محمد بن سلمان.. هنا تختفي ابتسامته وهذا ما ينتظر إيران بعد &quot;الفجيرة&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-91-w50">
-                    <rect key="frame" x="15" y="280" width="345" height="90"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="&quot;أديب&quot; يحاول أن يفهم محمد بن سلمان.. هنا تختفي ابتسامته وهذا ما ينتظر إيران بعد &quot;الفجيرة&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-91-w50">
+                    <rect key="frame" x="15" y="290" width="345" height="90"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0J-di-Hva">
-                    <rect key="frame" x="16" y="390" width="343" height="61"/>
-                    <mutableString key="text">في مقال مطول حاول الكاتب المصري الشهير عماد الدين أديب رسم صورة عن قرب لولي العهد الأمير محمد بن سلمان، عارضاً رؤيته للمشهد السعودي الحالي، ومحاولاً أن يضع نقاطاً محددة تحدد ملامح شخصية الأمير الذي قال عنه: "يحسن الإنصات والاستماع والتعلم والاستشارة، وتزعجه 3 أمور، ويسابق الزمن بشكل مستمر مؤمناً بأن زمن السعودية المجاملة يجب أن ينتقل من المساندة من الخطوط الخلفية إلى صدر المواجهات في العلن، فهو يعمل 18 ساعة يومياً يصل الليل بالنهار، يقطع المنطقة والعالم ذهاباً وإياباً من أجل النجاح، وتحقيق ثقة مليك البلاد فيه، وثقة الأب في الابن، والشعب في ولي الع</mutableString>
+                    <rect key="frame" x="16" y="400" width="343" height="162"/>
+                    <string key="text">في مقال مطول حاول الكاتب المصري الشهير عماد الدين أديب رسم صورة عن قرب لولي العهد الأمير محمد بن سلمان، عارضاً رؤيته للمشهد السعودي الحالي، ومحاولاً أن يضع نقاطاً محددة تحدد ملامح شخصية الأمير الذي قال عنه: "يحسن الإنصات والاستماع والتعلم والاستشارة، وتزعجه 3 أمور، ويسابق الزمن بشكل مستمر مؤمناً بأن زمن السعودية المجاملة يجب أن ينتقل من المساندة من الخطوط الخلفية إلى صدر المواجهات في العلن، فهو يعمل 18 ساعة يومياً يصل الليل بالنهار، يقطع المنطقة والعالم ذهاباً وإياباً من أجل النجاح، وتحقيق ثقة مليك البلاد فيه، وثقة الأب في الابن، والشعب في ولي الع</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIN-9P-zPH">
-                    <rect key="frame" x="15" y="471" width="345" height="25"/>
+                    <rect key="frame" x="15" y="582" width="345" height="25"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-uv-oQu">
                             <rect key="frame" x="10" y="0.0" width="20" height="25"/>
@@ -133,6 +138,7 @@
             <constraints>
                 <constraint firstItem="BgJ-91-w50" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6pI-ZI-fNL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BgJ-91-w50" secondAttribute="trailing" constant="15" id="931-ie-jad"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oIN-9P-zPH" secondAttribute="bottom" constant="60" id="H0N-dc-eu3"/>
                 <constraint firstItem="i0J-di-Hva" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NCr-uj-OvK"/>
                 <constraint firstItem="i0J-di-Hva" firstAttribute="top" secondItem="BgJ-91-w50" secondAttribute="bottom" constant="20" id="QbY-Mv-aR5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i0J-di-Hva" secondAttribute="trailing" constant="16" id="X4A-Se-jey"/>

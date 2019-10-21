@@ -12,12 +12,12 @@ import Foundation
 protocol BaseViewAdaptorProtocal:class {
     associatedtype DataType
     associatedtype AdaptorDelegate where AdaptorDelegate:viewAdaptorDelegate
-    var list: [DataType]? { get set}
+    var data: DataType? { get set}
     var delegate:AdaptorDelegate? { get set }
     var reloadData:(() -> Void)? { get set}
-    func add(items: [DataType]?)
-    func count() -> Int
+    func count(name array: String) -> Int
     func clear(reload: Bool)
+    func add(item: DataType)
 }
 protocol viewAdaptorDelegate:class {
     

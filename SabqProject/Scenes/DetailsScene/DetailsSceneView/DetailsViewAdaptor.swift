@@ -8,19 +8,21 @@
 
 import Foundation
 class DetailsViewAdaptor: BaseViewAdaptorProtocal{
-  
+   
+    
     typealias DataType = DetailsSceneModel
     typealias AdaptorDelegate = DetailsSceneViewController
-    var list: [DetailsSceneModel]?
+    var data: DetailsSceneModel?
     var delegate: DetailsSceneViewController?
     var reloadData: (() -> Void)?
-    
-    func add(items: [DetailsSceneModel]?) {
-        
+    func add(item: DetailsSceneModel) {
+        data = item
     }
-     func count() -> Int {
+    
+    func count(name array: String) -> Int {
         return 0
     }
+   
     func clear(reload: Bool) {
         
     }

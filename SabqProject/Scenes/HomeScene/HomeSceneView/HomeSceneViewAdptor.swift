@@ -9,23 +9,52 @@
 import Foundation
 
 class HomeSceneViewAdaptor :BaseViewAdaptorProtocal{
-    typealias DataType = HomeSceneModel
+   
+    typealias DataType = HomeMaterialResponse
     typealias AdaptorDelegate = HomeSceneViewController
-    var list: [HomeSceneModel]?
+    var data: HomeMaterialResponse?
     
     var delegate: HomeSceneViewController?
     
     var reloadData: (() -> Void)?
-    
-    func add(items: [HomeSceneModel]?) {
-        
+    func add(item: DataType){
+        data = item
     }
-    
-    func count() -> Int {
-      return 0
+    func count(name array: String) -> Int {
+        if array == "slider"{
+            if let count = data?.slider?.count{
+                return count
+            }
+            return 0
+        }else if array == "materials" {
+            if let count = data?.materials?.count{
+                return count
+            }
+            return 0
+        }
+        return 0
     }
-    
     func clear(reload: Bool) {
         
+    }
+    
+    func addFirstElememntInMaterial() {
+   
+    }
+    func getItemInMaterialArray(at index: Int) -> Materials? {
+        if let item = data?.materials?[index] {
+            return item
+        }
+        else {
+        return nil
+        }
+    }
+    func getItemInSliderArray(at index: Int) -> Slider? {
+        if let item = data?.slider?[index] {
+            return item
+        }
+        else {
+            return nil
+        }
     }
 }
