@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
-class BaseViewController : UIViewController, BaseViewProtocol {
-    var presenter:BasePresenter?
+
+class BaseViewController: UIViewController, BaseViewProtocol {
     
-    public func setPresenter (presenter: BasePresenter) {
-        self.presenter = presenter
-    }
     func showLoading(allowNavigation: Bool) {
         print("showLoading")
     }

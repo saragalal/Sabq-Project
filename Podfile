@@ -8,6 +8,7 @@ target 'SabqProject' do
   # Pods for SabqProject
  pod 'Moya'
  pod 'SDWebImage', '~> 5.0'
+ pod 'NSDate+TimeAgo'
   target 'SabqProjectTests' do
     inherit! :search_paths
     # Pods for testing

@@ -84,7 +84,7 @@ extension NetworkManager{
         _ result: Swift.Result<HomeImagesVideoResponse, MoyaError>,
         _ statusCode: StatusCode?
         ) -> Void){
-        provider.request(MultiTarget(HomeService.homePage)) { (result) in
+        provider.request(MultiTarget(HomeService.homeImage)) { (result) in
             switch result {
             case .success(let response):
                 if (200...299 ~= response.statusCode) {
@@ -117,16 +117,16 @@ extension NetworkManager{
         }
     }
     func getHomePageArticles(completion: @escaping (
-        _ result: Swift.Result<HomeMaterialResponse, MoyaError>,
+        _ result: Swift.Result<HomeArticlesResponse, MoyaError>,
         _ statusCode: StatusCode?
         ) -> Void){
-        provider.request(MultiTarget(HomeService.homePage)) { (result) in
+        provider.request(MultiTarget(HomeService.homeArticle)) { (result) in
             switch result {
             case .success(let response):
                 if (200...299 ~= response.statusCode) {
                     do {
                         print(response.data)
-                        let resp = try JSONDecoder().decode(HomeMaterialResponse.self, from: response.data)
+                        let resp = try JSONDecoder().decode(HomeArticlesResponse.self, from: response.data)
                         dump(resp)
                         completion(.success(resp), response.statusCode)
                     } catch {

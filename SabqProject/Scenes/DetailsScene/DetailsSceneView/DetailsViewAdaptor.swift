@@ -15,11 +15,11 @@ class DetailsViewAdaptor: BaseViewAdaptorProtocal{
     var data: DetailsSceneModel?
     var delegate: DetailsSceneViewController?
     var reloadData: (() -> Void)?
-    func add(item: DetailsSceneModel) {
+    func add(item: DataType?) {
         data = item
     }
     
-    func count(name array: String) -> Int {
+    func count(name array: String) -> Int? {
         return 0
     }
    

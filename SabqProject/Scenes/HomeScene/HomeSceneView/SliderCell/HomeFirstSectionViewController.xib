@@ -29,7 +29,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_slider_img" translatesAutoresizingMaskIntoConstraints="NO" id="dVS-qe-gY7">
                     <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="oyn-OX-fep"/>
+                        <constraint firstAttribute="height" constant="250" id="uxV-Tc-gU6"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="&quot;أديب&quot; يحاول أن يفهم محمد بن سلمان.. هنا تختفي ابتسامته وهذا ما ينتظر إيران بعد &quot;الفجيرة&quot;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgJ-91-w50">
@@ -39,14 +39,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0J-di-Hva">
-                    <rect key="frame" x="16" y="400" width="343" height="162"/>
+                    <rect key="frame" x="16" y="405" width="343" height="64.5"/>
                     <string key="text">في مقال مطول حاول الكاتب المصري الشهير عماد الدين أديب رسم صورة عن قرب لولي العهد الأمير محمد بن سلمان، عارضاً رؤيته للمشهد السعودي الحالي، ومحاولاً أن يضع نقاطاً محددة تحدد ملامح شخصية الأمير الذي قال عنه: "يحسن الإنصات والاستماع والتعلم والاستشارة، وتزعجه 3 أمور، ويسابق الزمن بشكل مستمر مؤمناً بأن زمن السعودية المجاملة يجب أن ينتقل من المساندة من الخطوط الخلفية إلى صدر المواجهات في العلن، فهو يعمل 18 ساعة يومياً يصل الليل بالنهار، يقطع المنطقة والعالم ذهاباً وإياباً من أجل النجاح، وتحقيق ثقة مليك البلاد فيه، وثقة الأب في الابن، والشعب في ولي الع</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIN-9P-zPH">
-                    <rect key="frame" x="15" y="582" width="345" height="25"/>
+                    <rect key="frame" x="15" y="494.5" width="345" height="25"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="GPz-uv-oQu">
                             <rect key="frame" x="10" y="0.0" width="20" height="25"/>
@@ -138,15 +138,14 @@
             <constraints>
                 <constraint firstItem="BgJ-91-w50" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6pI-ZI-fNL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BgJ-91-w50" secondAttribute="trailing" constant="15" id="931-ie-jad"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oIN-9P-zPH" secondAttribute="bottom" constant="60" id="H0N-dc-eu3"/>
-                <constraint firstItem="i0J-di-Hva" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NCr-uj-OvK"/>
-                <constraint firstItem="i0J-di-Hva" firstAttribute="top" secondItem="BgJ-91-w50" secondAttribute="bottom" constant="20" id="QbY-Mv-aR5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i0J-di-Hva" secondAttribute="trailing" constant="16" id="X4A-Se-jey"/>
+                <constraint firstItem="oIN-9P-zPH" firstAttribute="top" secondItem="i0J-di-Hva" secondAttribute="bottom" constant="25" id="GGo-Pr-d0h"/>
+                <constraint firstItem="i0J-di-Hva" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TT1-Xy-UvI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oIN-9P-zPH" secondAttribute="trailing" constant="15" id="dpb-xD-43w"/>
                 <constraint firstItem="dVS-qe-gY7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="knj-VX-v3M"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i0J-di-Hva" secondAttribute="trailing" constant="16" id="lHc-pj-klW"/>
+                <constraint firstItem="i0J-di-Hva" firstAttribute="top" secondItem="BgJ-91-w50" secondAttribute="bottom" constant="25" id="mdk-bX-dep"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dVS-qe-gY7" secondAttribute="trailing" id="meQ-ZI-kkx"/>
                 <constraint firstItem="BgJ-91-w50" firstAttribute="top" secondItem="dVS-qe-gY7" secondAttribute="bottom" constant="20" id="qsb-dB-bu0"/>
-                <constraint firstItem="oIN-9P-zPH" firstAttribute="top" secondItem="i0J-di-Hva" secondAttribute="bottom" constant="20" id="r6G-22-RbF"/>
                 <constraint firstItem="oIN-9P-zPH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="sRf-hV-n8g"/>
                 <constraint firstItem="dVS-qe-gY7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wyq-gi-eXq"/>
             </constraints>

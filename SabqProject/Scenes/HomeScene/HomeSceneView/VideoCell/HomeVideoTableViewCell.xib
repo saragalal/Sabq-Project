@@ -19,8 +19,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="336" height="136.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0U-Ww-rpw">
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="kLp-cf-eCB"/>
+                        </constraints>
+                    </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yTI-up-wTJ">
-                        <rect key="frame" x="0.0" y="0.0" width="336" height="136.5"/>
+                        <rect key="frame" x="0.0" y="2" width="336" height="134.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oIv-lH-73y">
                             <size key="itemSize" width="50" height="50"/>
@@ -31,10 +38,13 @@
                     </collectionView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="l0U-Ww-rpw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="46T-hX-7tQ"/>
                     <constraint firstItem="yTI-up-wTJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CsO-Uv-TkU"/>
-                    <constraint firstItem="yTI-up-wTJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iyT-Og-Lrs"/>
+                    <constraint firstItem="l0U-Ww-rpw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aGk-WR-FMK"/>
+                    <constraint firstItem="yTI-up-wTJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="iyT-Og-Lrs"/>
                     <constraint firstAttribute="bottom" secondItem="yTI-up-wTJ" secondAttribute="bottom" id="nrv-xd-s7E"/>
                     <constraint firstAttribute="trailing" secondItem="yTI-up-wTJ" secondAttribute="trailing" id="wD7-EB-9s6"/>
+                    <constraint firstAttribute="trailing" secondItem="l0U-Ww-rpw" secondAttribute="trailing" id="zlg-9l-1mv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

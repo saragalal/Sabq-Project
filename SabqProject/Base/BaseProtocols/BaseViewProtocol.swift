@@ -9,7 +9,7 @@
 import Foundation
  @objc
 protocol BaseViewProtocol {
-    @objc
+   @objc
     optional func showLoading(allowNavigation: Bool)
     @objc
     optional func hideLoading()

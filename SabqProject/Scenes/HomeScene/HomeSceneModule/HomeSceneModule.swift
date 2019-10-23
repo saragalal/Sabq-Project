@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 class HomeSceneModule {
     class func createHomeModule()  -> HomeSceneViewController{
         let view = HomeSceneViewController()
         let model = HomeSceneModel()
-//        let presenter = HomeScenePresenter(view: view ,model: model)
-//        view.setPresenter(presenter: presenter)
+        let presenter = HomeScenePresenter(view: view ,model: model)
+        view.setPresenter(presenter: presenter)
         return view
     }
     

@@ -41,6 +41,28 @@ class HomeTableViewCell: UITableViewCell {
                 imgView.image = UIImage(named: "noimage.png")
             }
             titleLb.text = item?.title
+            let timeDiff = (item?.publishDate?.asDate)?.daysSinceNow
+            if timeDiff?.year != nil , timeDiff?.year != 0{
+                let str = (timeDiff?.year)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "سنة"
+            }else if timeDiff?.month != nil , timeDiff?.month != 0 {
+                let str = (timeDiff?.month)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "شهر"
+            }else if timeDiff?.weekOfMonth != nil , timeDiff?.weekOfMonth != 0 {
+                let str = (timeDiff?.month)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "اسبوع"
+            }else if timeDiff?.day != nil , timeDiff?.day != 0{
+                let str = (timeDiff?.day)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "يوم"
+            }else if timeDiff?.hour != nil , timeDiff?.hour != 0 {
+                let str = (timeDiff?.hour)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "ساعة"
+            }else if timeDiff?.minute != nil , timeDiff?.minute != 0{
+                let str = (timeDiff?.month)?.numtoArabic()
+                timeLb.text = "منذ " + str! + "دقيقة"
+            }else {
+                timeLb.text = "منذ لحظة"
+            }
             if let number = item?.noOfViews {
                 numberLb.text = "\(number)"
             } else {

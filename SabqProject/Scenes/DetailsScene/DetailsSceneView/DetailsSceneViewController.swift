@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsSceneViewController: BaseViewController, DetailsSceneViewProtocol, viewAdaptorDelegate {
+class DetailsSceneViewController: UIViewController, DetailsSceneViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()

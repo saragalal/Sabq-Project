@@ -19,8 +19,9 @@ class HomeVideosCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
   func configureCell(item: Comics?) {
+    self.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
         titleLb.text = item?.title
-        if let urlString = item?.coverPhoto{
+        if let urlString = item?.authorImg{
             imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
         }
         else {

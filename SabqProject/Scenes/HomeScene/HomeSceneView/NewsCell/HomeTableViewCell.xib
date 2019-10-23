@@ -24,10 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="447" height="153.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_news_img_3" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ww-ZQT">
-                                <rect key="frame" x="298" y="20" width="134" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="gcN-th-8b5"/>
-                                </constraints>
+                                <rect key="frame" x="298" y="20" width="134" height="107.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشورى يوافق على تعديلات نظام صندوق التنمية الصناعية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-e4-2mN">
                                 <rect key="frame" x="8" y="30" width="282" height="38.5"/>
@@ -153,6 +150,7 @@
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="leading" secondItem="z9P-e4-2mN" secondAttribute="trailing" constant="8" id="XHb-6e-sei"/>
                             <constraint firstAttribute="bottom" secondItem="0Go-ww-ZQT" secondAttribute="bottom" constant="20" id="Z9n-uS-upA"/>
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="width" secondItem="2M6-cn-sV4" secondAttribute="width" multiplier="0.3" id="dUo-Rg-tft"/>
+                            <constraint firstItem="0Go-ww-ZQT" firstAttribute="height" secondItem="2M6-cn-sV4" secondAttribute="height" multiplier="0.7" id="eOV-bg-OPv"/>
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="leading" secondItem="ZmV-wP-SMQ" secondAttribute="trailing" constant="10" id="hSj-sO-pjd"/>
                             <constraint firstAttribute="bottom" secondItem="ZmV-wP-SMQ" secondAttribute="bottom" constant="30" id="u5n-9O-vVV"/>
                             <constraint firstItem="ZmV-wP-SMQ" firstAttribute="top" secondItem="z9P-e4-2mN" secondAttribute="bottom" constant="30" id="vth-YG-OEe"/>

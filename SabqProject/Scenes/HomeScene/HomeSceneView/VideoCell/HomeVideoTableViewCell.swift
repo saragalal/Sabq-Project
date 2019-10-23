@@ -11,37 +11,38 @@ import UIKit
 class HomeVideoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var videoArray: [Comics?]?
+    var cellIdentifier = "HomeVideosCollectionViewCell"
+    private var videoAdaptor: VideoCellAdaptor?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+        collectionView.register(UINib(nibName:cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        videoAdaptor = VideoCellAdaptor()
+        videoAdaptor?.setAdaptor(collectionView: collectionView,reloadData: reloadCollectionView)
     }
     
     func configureCell(videos: [Comics?]?){
-        collectionView.register(UINib(nibName:"HomeVideosCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeVideosCollectionViewCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        videoArray = videos
+       videoAdaptor?.add(item: videos)
+    }
+    func reloadCollectionView(){
         collectionView.reloadData()
     }
 }
 extension HomeVideoTableViewCell: UICollectionViewDelegate , UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let number = videoArray?.count {
+        if let number = videoAdaptor?.count(name: "video") {
             return number
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeVideosCollectionViewCell", for: indexPath) as? HomeVideosCollectionViewCell {
-            cell.configureCell(item: videoArray?[indexPath.row])
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? HomeVideosCollectionViewCell {
+            if let item = videoAdaptor?.getItem(at: indexPath.row){
+            cell.configureCell(item: item)
+            }
             return cell
         }
         fatalError()
@@ -52,7 +53,7 @@ extension HomeVideoTableViewCell: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 0.4*(collectionView.frame.size.width), height: 280)
+        return CGSize(width: 0.4*(collectionView.frame.size.width), height: 0.8*(collectionView.frame.size.width))
     }
     
     
