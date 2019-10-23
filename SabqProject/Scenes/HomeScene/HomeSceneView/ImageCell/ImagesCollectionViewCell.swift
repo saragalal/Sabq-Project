@@ -21,6 +21,11 @@ class ImagesCollectionViewCell: UICollectionViewCell {
         self.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
         if item != nil {
             titleLb.text = item?.title
+            let date = ((item?.publishDate)?.asDate)!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MM-yyyy"
+            let timeStr = formatter.string(from: date)
+            timeLb.text = timeStr
             if let urlString = item?.coverPhoto{
                 imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
             }

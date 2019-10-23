@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 class HomeTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var categoryLb: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var titleLb: UILabel!
@@ -41,6 +42,7 @@ class HomeTableViewCell: UITableViewCell {
                 imgView.image = UIImage(named: "noimage.png")
             }
             titleLb.text = item?.title
+            categoryLb.text = item?.parentCategoryName
             let timeDiff = (item?.publishDate?.asDate)?.daysSinceNow
             if timeDiff?.year != nil , timeDiff?.year != 0{
                 let str = (timeDiff?.year)?.numtoArabic()
