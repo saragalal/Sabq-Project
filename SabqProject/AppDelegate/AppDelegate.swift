@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupNetworking()
-        let tabBar = UITabBarController()
-        window = UIWindow(frame: UIScreen.main.bounds)
+         window = UIWindow(frame: UIScreen.main.bounds)
+        let tabBar = TabViewController()
         let view1 = HomeSceneModule.createHomeModule()
         let homeNavigation = UINavigationController(rootViewController: view1)
-        homeNavigation.navigationBar.barTintColor = UIColor.white
+        //homeNavigation.navigationBar.barTintColor = UIColor(named: "backgroundColor")
         view1.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
         view1.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_notification_icon"), style: .done, target: self, action: nil)
         let homeItem = UITabBarItem()

@@ -8,14 +8,17 @@
 
 import Foundation
 import UIKit
-class ImageCellAdaptor: BaseViewAdaptorProtocal{
+class ImageCellAdaptor: NSObject, BaseViewAdaptorProtocal{
     typealias DataType = [Comics?]
     var data: [Comics?]?
     var collectionView: UICollectionView!
     var reloadData: (() -> Void)?
+    var cellIdentifier = String.imageCollectionCellIdentifier()
     func setAdaptor(collectionView: UICollectionView!,reloadData: (() -> Void)?){
         self.collectionView = collectionView
         self.reloadData = reloadData
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
     func count(name array: String) -> Int? {
         return data?.count
@@ -32,6 +35,40 @@ class ImageCellAdaptor: BaseViewAdaptorProtocal{
     
     func getItem(at index: Int) -> Comics?{
         return data?[index]
+    }
+    
+}
+extension ImageCellAdaptor: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let number = self.count(name: String.images()) {
+            return number
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ImagesCollectionViewCell {
+            if let item = self.getItem(at: indexPath.row){
+                cell.configureCell(item: item)
+            }
+            return cell
+        }
+        fatalError()
+    }
+}
+extension ImageCellAdaptor: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 0.75*(collectionView.frame.size.width), height: 0.8*(collectionView.frame.size.width))
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
     }
     
 }

@@ -26,4 +26,51 @@ extension String {
         formatter.dateFormat = "yyyy-MM-dd HH:mm ss"
         return formatter.date(from: self) ?? Date()
     }
+    
+   //Static String
+   static func newsTableCellIdentifier() -> String {
+        return "HomeTableViewCell"
+    }
+   static func sliderTableCellIdentifier() -> String {
+        return "SliderTableViewCell"
+    }
+   static func videoTableCellIdentifier() -> String {
+        return "HomeVideoTableViewCell"
+    }
+   static func imageTableCellIdentifier() -> String {
+        return "ImagesTableViewCell"
+    }
+    static func articleTableCellIdentifier() -> String {
+        return "ArticleTableViewCell"
+    }
+   static func sliderViewSection() -> String{
+        return "HomeFirstSectionViewController"
+    }
+   static func videoCollectionCellIdentifier() -> String {
+        return "HomeVideosCollectionViewCell"
+    }
+   static func imageCollectionCellIdentifier() -> String {
+        return "ImagesCollectionViewCell"
+    }
+   static func articleCollectionCellIdentifier() -> String {
+        return "ArticlesCollectionViewCell"
+    }
+   static func news() -> String{
+        return "news"
+    }
+   static func videos() -> String{
+           return "video"
+       }
+   static func articles() -> String{
+           return "article"
+       }
+   static func images() -> String{
+        return "image"
+    }
+   static func slider() -> String {
+        return "slider"
+    }
+   static func materials() -> String {
+           return "materials"
+       }
 }

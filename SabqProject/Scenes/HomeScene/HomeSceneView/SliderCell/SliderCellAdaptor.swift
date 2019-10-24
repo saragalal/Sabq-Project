@@ -8,11 +8,19 @@
 
 import Foundation
 import UIKit
-class SliderCellAdaptor: BaseViewAdaptorProtocal{
+class SliderCellAdaptor: NSObject, BaseViewAdaptorProtocal{
     var reloadData: (() -> Void)?
-    
     typealias DataType = [Slider?]
     var data: [Slider?]?
+    var pageViewController: UIPageViewController!
+    var pageController: UIPageControl!
+    var lastPendingViewControllerIndex = 0
+    func setAdaptor(pager: UIPageViewController, pageController: UIPageControl){
+        self.pageViewController = pager
+        self.pageController = pageController
+        self.pageViewController.delegate = self
+        self.pageViewController.dataSource = self
+    }
     func count(name array: String) -> Int? {
         return data?.count
     }
@@ -27,6 +35,63 @@ class SliderCellAdaptor: BaseViewAdaptorProtocal{
     
     func getItem(at index: Int) -> Slider?{
         return data?[index]
+    }
+    func restartAction(_ sender: AnyObject) {
+        if let count = self.count(name: String.slider()){
+            self.pageViewController.setViewControllers([self.viewControllerAtIndex(index: count - 1)], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    func viewControllerAtIndex(index: Int) -> HomeFirstSectionViewController {
+        if let count = (self.count(name: String.slider())) {
+            if (count == 0) || (index >= count) {
+                return HomeFirstSectionViewController(nibName: String.sliderViewSection(), bundle: .main)
+            }
+        }
+        let vc = HomeFirstSectionViewController(nibName: String.sliderViewSection(), bundle: .main)
+        vc.pageIndex = index
+        vc.setSliderItem(item: self.getItem(at: index))
+        return vc
+    }
+    
+}
+extension SliderCellAdaptor : UIPageViewControllerDataSource,UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let vc = viewController as! HomeFirstSectionViewController
+        var index = vc.pageIndex as Int
+        if (index == 0 || index == NSNotFound) {
+            return nil
+        }
+        index -= 1
+        return self.viewControllerAtIndex(index: index)
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let vc = viewController as! HomeFirstSectionViewController
+        var index = vc.pageIndex as Int
+        if (index == NSNotFound) {
+            return nil
+        }
+        index += 1
+        if (index == (self.count(name: String.slider()))!) {
+            return nil
+        }
+        return self.viewControllerAtIndex(index: index)
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return (self.count(name: String.slider()))!
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
+        if (!completed)
+        {
+            return
+        }
+        self.pageController.currentPage = self.lastPendingViewControllerIndex
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]){
+        if let viewController = pendingViewControllers[0] as? HomeFirstSectionViewController {
+            self.lastPendingViewControllerIndex = viewController.pageIndex
+        }
     }
     
 }

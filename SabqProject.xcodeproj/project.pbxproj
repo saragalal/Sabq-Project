@@ -69,6 +69,7 @@
 		92A220FA23607C0C002D1755 /* TabThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A220F823607C0C002D1755 /* TabThreeViewController.xib */; };
 		92A220FE23607C37002D1755 /* TabFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A220FC23607C37002D1755 /* TabFourViewController.swift */; };
 		92A220FF23607C37002D1755 /* TabFourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A220FD23607C37002D1755 /* TabFourViewController.xib */; };
+		92B44F2E2361804C00D717AB /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B44F2D2361804C00D717AB /* TabViewController.swift */; };
 		92C5BBEB235EDFF900127B9B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5BBEA235EDFF900127B9B /* DateExtension.swift */; };
 		92C5BBF4235EE31B00127B9B /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5BBF2235EE31B00127B9B /* ArticleTableViewCell.swift */; };
 		92C5BBF5235EE31B00127B9B /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C5BBF3235EE31B00127B9B /* ArticleTableViewCell.xib */; };
@@ -175,6 +176,8 @@
 		92A220F823607C0C002D1755 /* TabThreeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabThreeViewController.xib; sourceTree = "<group>"; };
 		92A220FC23607C37002D1755 /* TabFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFourViewController.swift; sourceTree = "<group>"; };
 		92A220FD23607C37002D1755 /* TabFourViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabFourViewController.xib; sourceTree = "<group>"; };
+		92A2210023609488002D1755 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		92B44F2D2361804C00D717AB /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		92C5BBEA235EDFF900127B9B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		92C5BBF2235EE31B00127B9B /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		92C5BBF3235EE31B00127B9B /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -377,6 +380,7 @@
 		92A220FB23607C12002D1755 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
+				92B44F2D2361804C00D717AB /* TabViewController.swift */,
 				92A220F323607BF2002D1755 /* TabTwoViewController.swift */,
 				92A220F423607BF2002D1755 /* TabTwoViewController.xib */,
 				92A220F723607C0C002D1755 /* TabThreeViewController.swift */,
@@ -487,7 +491,7 @@
 				92D95DE523575D3A009B27A5 /* Resources */,
 				92D95DE623575D44009B27A5 /* UI */,
 				920554202358698300F3079C /* Utilities */,
-				92D95DE423575D11009B27A5 /* Supporting Files */,
+				92D95DE423575D11009B27A5 /* SupportingFiles */,
 			);
 			path = SabqProject;
 			sourceTree = "<group>";
@@ -608,12 +612,13 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		92D95DE423575D11009B27A5 /* Supporting Files */ = {
+		92D95DE423575D11009B27A5 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				92A2210023609488002D1755 /* Bridging-Header.h */,
 				92D95DA8235754C7009B27A5 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		92D95DE523575D3A009B27A5 /* Resources */ = {
@@ -901,6 +906,7 @@
 				92C5BBFA235EE34500127B9B /* ImagesTableViewCell.swift in Sources */,
 				9205542D23586E1900F3079C /* BasePresenter.swift in Sources */,
 				9212E8F0235DE54E00BEBD0B /* StringExtension.swift in Sources */,
+				92B44F2E2361804C00D717AB /* TabViewController.swift in Sources */,
 				9205544E2358964B00F3079C /* HomeFirstSectionViewController.swift in Sources */,
 				9205543723586E9300F3079C /* HomeSceneViewProtocol.swift in Sources */,
 				9252A658235C95520099EF0E /* Materials.swift in Sources */,
@@ -1116,13 +1122,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/SabqProject/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SabqProject/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saragalal.SabqProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SabqProject/SupportingFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1134,13 +1141,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/SabqProject/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SabqProject/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.saragalal.SabqProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SabqProject/SupportingFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
