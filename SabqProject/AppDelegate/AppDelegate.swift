@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBar = TabViewController()
         let view1 = HomeSceneModule.createHomeModule()
         let homeNavigation = UINavigationController(rootViewController: view1)
-        //homeNavigation.navigationBar.barTintColor = UIColor(named: "backgroundColor")
         view1.navigationItem.titleView = UIImageView(image: UIImage(named: "img_logo"))
         view1.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_notification_icon"), style: .done, target: self, action: nil)
         let homeItem = UITabBarItem()

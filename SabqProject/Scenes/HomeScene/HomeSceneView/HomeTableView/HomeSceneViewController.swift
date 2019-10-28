@@ -10,6 +10,8 @@ import UIKit
 import Moya
 class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
     @IBOutlet weak var homeTableView: UITableView!
+    
+    @IBOutlet weak var shimmerView: FBShimmeringView!
     private var presenter: HomeScenePresenterProtocol?
     private var homeAdaptor: HomeSceneViewAdaptor?
     private var identifier = ""
@@ -24,6 +26,7 @@ class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
         self.homeTableView.rowHeight = UITableView.automaticDimension
         homeAdaptor = HomeSceneViewAdaptor()
         homeAdaptor?.setAdaptor(view: self ,tableView: homeTableView, reloadData: reloadTableView)
+        showLoading()
         presenter?.viewDidLoad()
     }
     func setPresenter(presenter: HomeScenePresenter){
@@ -31,6 +34,7 @@ class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
     }
     func addHomeResponse(response: HomeMaterialResponse?) {
         homeAdaptor?.add(item: response)
+       hideLoading()
     }
     
     func addVideoArray(videos: [Comics?]?) {
@@ -47,6 +51,22 @@ class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
     }
       func reloadTableView() {
         self.homeTableView.reloadData()
+    }
+    override func showLoading() {
+        shimmerView.isHidden = false
+        let shimmer = ShimmerViewController()
+        shimmerView.contentView = shimmer.view
+        shimmerView.isShimmering = true
+        shimmerView.shimmeringPauseDuration = 0.2
+        shimmerView.shimmeringAnimationOpacity = 0.5
+        shimmerView.shimmeringOpacity = 1.0
+        shimmerView.shimmeringSpeed = 230
+        shimmerView.shimmeringHighlightLength = 1.0
+        shimmerView.shimmeringDirection = .right
+    }
+    override func hideLoading() {
+        shimmerView.isShimmering = false
+        shimmerView.isHidden = true
     }
 }
 

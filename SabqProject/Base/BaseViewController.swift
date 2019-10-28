@@ -11,7 +11,7 @@ import UIKit
 
 class BaseViewController: UIViewController, BaseViewProtocol {
     
-    func showLoading(allowNavigation: Bool) {
+    func showLoading() {
         print("showLoading")
     }
     func hideLoading() {

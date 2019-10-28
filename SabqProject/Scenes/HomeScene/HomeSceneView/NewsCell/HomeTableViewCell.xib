@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2M6-cn-sV4">
-                        <rect key="frame" x="0.0" y="0.0" width="447" height="151.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="447" height="188.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8T-Fe-ZY7">
                                 <rect key="frame" x="-15" y="0.0" width="477" height="1"/>
@@ -35,17 +35,17 @@
                                 <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_news_img_3" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ww-ZQT">
-                                <rect key="frame" x="298" y="20" width="134" height="106"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ww-ZQT">
+                                <rect key="frame" x="298" y="20" width="134" height="132"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشورى يوافق على تعديلات نظام صندوق التنمية الصناعية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-e4-2mN">
-                                <rect key="frame" x="8" y="53" width="282" height="38.5"/>
+                                <rect key="frame" x="8" y="53" width="282" height="75.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmV-wP-SMQ">
-                                <rect key="frame" x="0.0" y="106.5" width="288" height="25"/>
+                                <rect key="frame" x="0.0" y="143.5" width="288" height="25"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-4E-N8R">
                                         <rect key="frame" x="10" y="0.0" width="20" height="25"/>
@@ -146,6 +146,23 @@
                                     <constraint firstAttribute="height" constant="15" id="bru-dp-20T"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH1-sz-y1a" customClass="FBShimmeringView">
+                                <rect key="frame" x="298" y="11" width="149" height="170"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-0u-1ef">
+                                        <rect key="frame" x="50" y="52" width="49" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49.000000000000007" id="4em-NO-eaZ"/>
+                                            <constraint firstAttribute="height" constant="66" id="TwP-dR-1DZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.89532855310000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8xO-0u-1ef" firstAttribute="centerX" secondItem="MH1-sz-y1a" secondAttribute="centerX" id="q8B-bo-P8d"/>
+                                    <constraint firstItem="8xO-0u-1ef" firstAttribute="centerY" secondItem="MH1-sz-y1a" secondAttribute="centerY" id="yIp-UR-o3C"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
@@ -156,14 +173,17 @@
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="leading" secondItem="Apc-Q8-XdR" secondAttribute="trailing" constant="-30" id="Da2-wX-TAB"/>
                             <constraint firstItem="ZmV-wP-SMQ" firstAttribute="leading" secondItem="2M6-cn-sV4" secondAttribute="leading" id="JMX-0I-sjv"/>
                             <constraint firstItem="K8T-Fe-ZY7" firstAttribute="top" secondItem="2M6-cn-sV4" secondAttribute="top" id="Jue-Qc-omT"/>
+                            <constraint firstAttribute="trailing" secondItem="MH1-sz-y1a" secondAttribute="trailing" id="K2G-0U-j1d"/>
                             <constraint firstItem="z9P-e4-2mN" firstAttribute="leading" secondItem="2M6-cn-sV4" secondAttribute="leading" constant="8" id="KAE-69-2ZR"/>
                             <constraint firstAttribute="trailing" secondItem="0Go-ww-ZQT" secondAttribute="trailing" constant="15" id="RO7-rp-ODI"/>
                             <constraint firstItem="Apc-Q8-XdR" firstAttribute="top" secondItem="2M6-cn-sV4" secondAttribute="top" constant="20" id="Rao-z6-Htf"/>
                             <constraint firstItem="K8T-Fe-ZY7" firstAttribute="leading" secondItem="2M6-cn-sV4" secondAttribute="leading" constant="-15" id="TOI-xT-BCg"/>
+                            <constraint firstItem="MH1-sz-y1a" firstAttribute="top" secondItem="2M6-cn-sV4" secondAttribute="top" constant="11" id="UnP-zF-w9t"/>
                             <constraint firstItem="Mg5-Gk-wzV" firstAttribute="top" secondItem="2M6-cn-sV4" secondAttribute="top" constant="25" id="We6-cD-VVl"/>
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="leading" secondItem="z9P-e4-2mN" secondAttribute="trailing" constant="8" id="XHb-6e-sei"/>
                             <constraint firstItem="z9P-e4-2mN" firstAttribute="top" secondItem="ywv-9e-woT" secondAttribute="bottom" constant="10" id="Xbm-A1-zhR"/>
                             <constraint firstAttribute="bottom" secondItem="0Go-ww-ZQT" secondAttribute="bottom" constant="20" id="Z9n-uS-upA"/>
+                            <constraint firstItem="MH1-sz-y1a" firstAttribute="leading" secondItem="z9P-e4-2mN" secondAttribute="trailing" constant="8" id="ZHR-9m-C8T"/>
                             <constraint firstAttribute="bottom" secondItem="ZmV-wP-SMQ" secondAttribute="bottom" constant="20" id="ZVn-US-KO5"/>
                             <constraint firstItem="z9P-e4-2mN" firstAttribute="top" secondItem="Mg5-Gk-wzV" secondAttribute="bottom" constant="13" id="aYn-Up-ZyC"/>
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="width" secondItem="2M6-cn-sV4" secondAttribute="width" multiplier="0.3" id="dUo-Rg-tft"/>
@@ -172,6 +192,7 @@
                             <constraint firstItem="0Go-ww-ZQT" firstAttribute="leading" secondItem="ZmV-wP-SMQ" secondAttribute="trailing" constant="10" id="hSj-sO-pjd"/>
                             <constraint firstItem="ywv-9e-woT" firstAttribute="top" secondItem="2M6-cn-sV4" secondAttribute="top" constant="26" id="pky-ie-jDC"/>
                             <constraint firstItem="ZmV-wP-SMQ" firstAttribute="top" secondItem="z9P-e4-2mN" secondAttribute="bottom" constant="15" id="vth-YG-OEe"/>
+                            <constraint firstAttribute="bottom" secondItem="MH1-sz-y1a" secondAttribute="bottom" constant="7.5" id="xXK-am-soC"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -187,7 +208,9 @@
                 <outlet property="bookmarkImg" destination="gPK-4E-N8R" id="P9K-CV-zhg"/>
                 <outlet property="categoryLb" destination="ywv-9e-woT" id="7bc-2r-YYO"/>
                 <outlet property="imgView" destination="0Go-ww-ZQT" id="97i-fQ-1BN"/>
+                <outlet property="loadedImg" destination="8xO-0u-1ef" id="CqF-oj-ujl"/>
                 <outlet property="numberLb" destination="XRN-Fh-9dr" id="mOg-R2-hom"/>
+                <outlet property="shimmerView" destination="MH1-sz-y1a" id="0q3-WK-A17"/>
                 <outlet property="timeLb" destination="dTE-IA-7ij" id="Xrn-bi-vZf"/>
                 <outlet property="titleLb" destination="z9P-e4-2mN" id="a3F-cR-EpV"/>
                 <outlet property="videoImage" destination="Apc-Q8-XdR" id="hQt-4K-AOn"/>
@@ -201,12 +224,12 @@
         <image name="ic_play_1" width="30" height="30"/>
         <image name="ic_time" width="15" height="15"/>
         <image name="ic_views_icon" width="11" height="15"/>
-        <image name="img_news_img_3" width="100" height="100"/>
+        <image name="loaded" width="49" height="66"/>
         <namedColor name="LineColor">
-            <color red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92900002002716064" green="0.92900002002716064" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleColor">
-            <color red="0.098039215686274508" green="0.098039215686274508" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.097999997437000275" green="0.097999997437000275" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,6 +10,9 @@ import UIKit
 import SDWebImage
 class HomeVideosCollectionViewCell: UICollectionViewCell {
 
+    
+    @IBOutlet weak var loadedImg: UIImageView!
+    @IBOutlet weak var shimmerView: FBShimmeringView!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLb: UILabel!
     @IBOutlet weak var durationLb: UILabel!
@@ -21,11 +24,34 @@ class HomeVideosCollectionViewCell: UICollectionViewCell {
   func configureCell(item: Comics?) {
     self.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
         titleLb.text = item?.title
-        if let urlString = item?.authorImg{
-            imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
+     showLoading()
+    if let urlString = item?.authorImg{
+            //imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
+            imgView.sd_setImage(with: URL(string: urlString)) { (image, error, cache, url) in
+               self.hideLoading()
+                if error != nil {
+                   self.imgView.image = UIImage(named: "noimage.png")
+                }
+            }
         }
         else {
             imgView.image = UIImage(named: "noimage.png")
         }
+    }
+  func showLoading() {
+        shimmerView.isHidden = false
+       
+       shimmerView.contentView = loadedImg
+        shimmerView.isShimmering = true
+        shimmerView.shimmeringPauseDuration = 0.2
+        shimmerView.shimmeringAnimationOpacity = 0.5
+        shimmerView.shimmeringOpacity = 1.0
+        shimmerView.shimmeringSpeed = 230
+        shimmerView.shimmeringHighlightLength = 1.0
+        shimmerView.shimmeringDirection = .right
+    }
+   func hideLoading() {
+        shimmerView.isShimmering = false
+        shimmerView.isHidden = true
     }
 }
