@@ -7,14 +7,13 @@
 //
 
 import Foundation
-struct Tags : Codable {
-    let id : String?
-    let name : String?
+struct Tags: Codable {
+    let id: String?
+    let name: String?
     
     enum CodingKeys: String, CodingKey {
-        
-        case id = "id"
-        case name = "name"
+        case id
+        case name
     }
     
     init(from decoder: Decoder) throws {

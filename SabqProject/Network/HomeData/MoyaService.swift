@@ -17,10 +17,9 @@ enum  HomeService {
 }
 
 extension HomeService: TargetType {
-   
-    
-    var baseURL: URL {
-        return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
+   var baseURL: URL {
+//    swiftlint:disable force_unwrapping
+    return URL(string: NetworkManager.shared.networkConfig.baseUrl)!
     }
     
     var path: String {
@@ -36,7 +35,6 @@ extension HomeService: TargetType {
         }
         
     }
-    
     var method: Moya.Method {
         switch self {
         case .homePage:
@@ -74,10 +72,7 @@ extension HomeService: TargetType {
             return .requestParameters(parameters: ["": ""], encoding: URLEncoding.default)
         }
     }
-    
     var headers: [String: String]? {
-        return ["x-api-key":NetworkManager.shared.networkConfig.apiKey]
- }
+    return ["x-api-key": NetworkManager.shared.networkConfig.apiKey]
+       }
 }
-
-

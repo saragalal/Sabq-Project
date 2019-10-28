@@ -10,83 +10,85 @@ import UIKit
 import SDWebImage
 class HomeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var loadedImg: UIImageView!
-    @IBOutlet weak var shimmerView: FBShimmeringView!
-    @IBOutlet weak var categoryLb: UILabel!
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var videoImage: UIImageView!
-    @IBOutlet weak var titleLb: UILabel!
+    @IBOutlet weak private var loadedImg: UIImageView!
+    @IBOutlet weak private var shimmerView: FBShimmeringView!
+    @IBOutlet weak private var categoryLb: UILabel!
+    @IBOutlet weak private var imgView: UIImageView!
+    @IBOutlet weak private var videoImage: UIImageView!
+    @IBOutlet weak private var titleLb: UILabel!
     private var material: Materials?
-    @IBOutlet weak var timeLb: UILabel!
-    @IBOutlet weak var numberLb: UILabel!
-    @IBOutlet weak var bookmarkImg: UIImageView!
+    @IBOutlet weak private var timeLb: UILabel!
+    @IBOutlet weak private var numberLb: UILabel!
+    @IBOutlet weak private var bookmarkImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    func configureCell(item: Materials?){
+    func configureCell(item: Materials?) {
         videoImage.isHidden = true
         if item != nil {
           material = item
+            setTimeLabel(item: item)
           let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleTap))
           gestureRecognizer.numberOfTapsRequired = 1
           bookmarkImg.addGestureRecognizer(gestureRecognizer)
-            if let urlString = item?.coverPhoto{
+            if let urlString = item?.coverPhoto {
            // imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
                 showLoading()
-                imgView.sd_setImage(with: URL(string: urlString)) { (image, error, cache, url) in
-                              self.hideLoading()
-                               if error != nil {
-                                  self.imgView.image = UIImage(named: "noimage.png")
-                               }
-                           }
-                       
-            }
-            else {
-                imgView.image = UIImage(named: "noimage.png")
+                imgView.sd_setImage(with: URL(string: urlString)) { (image, error, _, _) in
+                    self.hideLoading()
+                    if error != nil {
+                        self.imgView.image = #imageLiteral(resourceName: "noimage")
+                    }
+                }
+             } else {
+                imgView.image = #imageLiteral(resourceName: "noimage")
             }
             titleLb.text = item?.title
             categoryLb.text = item?.parentCategoryName
-            let timeDiff = (item?.publishDate?.asDate)?.daysSinceNow
-            if timeDiff?.year != nil , timeDiff?.year != 0{
-                let str = (timeDiff?.year)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "سنة"
-            }else if timeDiff?.month != nil , timeDiff?.month != 0 {
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "شهر"
-            }else if timeDiff?.weekOfMonth != nil , timeDiff?.weekOfMonth != 0 {
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "اسبوع"
-            }else if timeDiff?.day != nil , timeDiff?.day != 0{
-                let str = (timeDiff?.day)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "يوم"
-            }else if timeDiff?.hour != nil , timeDiff?.hour != 0 {
-                let str = (timeDiff?.hour)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "ساعة"
-            }else if timeDiff?.minute != nil , timeDiff?.minute != 0{
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLb.text = "منذ " + str! + "دقيقة"
-            }else {
-                timeLb.text = "منذ لحظة"
-            }
             if let number = item?.noOfViews {
                 numberLb.text = "\(number)"
             } else {
                 numberLb.text = "\(0)"
             }
-            if item?.videos?.count != 0 {
+            if !(item?.videos?.isEmpty ?? true) {
                 videoImage.isHidden = false
             }
         }
     }
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+    @objc
+    func handleTap(_ sender: UITapGestureRecognizer) {
         print("bookmark is tapped")
+    }
+    func setTimeLabel(item: Materials?) {
+        let timeDiff = (item?.publishDate?.asDate)?.daysSinceNow
+                   if timeDiff?.year != nil, timeDiff?.year != 0 {
+                       if let str = (timeDiff?.year)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "سنة"
+                       }
+                   } else if timeDiff?.month != nil, timeDiff?.month != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "شهر"
+                       }
+                   } else if timeDiff?.weekOfMonth != nil, timeDiff?.weekOfMonth != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "اسبوع"
+                       }
+                   } else if timeDiff?.day != nil, timeDiff?.day != 0 {
+                       if let str = (timeDiff?.day)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "يوم"
+                       }
+                   } else if timeDiff?.hour != nil, timeDiff?.hour != 0 {
+                       if let str = (timeDiff?.hour)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "ساعة"
+                       }
+                   } else if timeDiff?.minute != nil, timeDiff?.minute != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                           timeLb.text = "منذ " + str + "دقيقة"
+                       }
+                   } else {
+                       timeLb.text = "منذ لحظة"
+                   }
     }
     func showLoading() {
          shimmerView.isHidden = false

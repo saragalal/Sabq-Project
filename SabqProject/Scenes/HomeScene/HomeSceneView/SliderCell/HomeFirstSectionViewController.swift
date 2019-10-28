@@ -13,153 +13,161 @@ class HomeFirstSectionViewController: UIViewController {
 
     var pageIndex: Int = 0
     var sliderItem: Slider?
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imgSlider: UIImageView!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var numberLabel: UILabel!
+    @IBOutlet weak private var bodyLabel: UILabel!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private  var imgSlider: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         if sliderItem != nil {
             titleLabel.text = sliderItem?.title
             numberLabel.text = "\(sliderItem?.noOfViews ?? 0)"
             bodyLabel.text = sliderItem?.description?.htmlToString
-            if let time = sliderItem?.publishDate?.asDate {
-             let timeDiff = (sliderItem?.publishDate?.asDate)?.daysSinceNow
-            if timeDiff?.year != nil, timeDiff?.year != 0 {
-                let str = (timeDiff?.year)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "سنة"
-            }else if timeDiff?.month != nil , timeDiff?.month != 0 {
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "شهر"
-            }else if timeDiff?.weekOfMonth != nil , timeDiff?.weekOfMonth != 0 {
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "اسبوع"
-            }else if timeDiff?.day != nil , timeDiff?.day != 0 {
-                let str = (timeDiff?.day)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "يوم"
-            }else if timeDiff?.hour != nil , timeDiff?.hour != 0 {
-                let str = (timeDiff?.hour)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "ساعة"
-            }else if timeDiff?.minute != nil , timeDiff?.minute != 0{
-                let str = (timeDiff?.month)?.numtoArabic()
-                timeLabel.text = "منذ " + str! + "دقيقة"
-            }else {
-                timeLabel.text = "منذ لحظة"
-             }
-            }
-            if let urlString = sliderItem?.coverPhoto{
-                imgSlider.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
-            }
-            else {
-                imgSlider.image = UIImage(named: "noimage.png")
+            setTimeLabel()
+            let palceholder = #imageLiteral(resourceName: "noimage")
+            if let urlString = sliderItem?.coverPhoto {
+                imgSlider.sd_setImage(with: URL(string: urlString), placeholderImage: palceholder)
+            } else {
+                imgSlider.image = palceholder
             }
         }
     }
-    func setSliderItem(item: Slider?){
+    func setSliderItem(item: Slider?) {
         sliderItem = item
     }
+    func setTimeLabel() {
+        let timeDiff = (sliderItem?.publishDate?.asDate)?.daysSinceNow
+                   if timeDiff?.year != nil, timeDiff?.year != 0 {
+                       if let str = (timeDiff?.year)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "سنة"
+                       }
+                   } else if timeDiff?.month != nil, timeDiff?.month != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "شهر"
+                       }
+                   } else if timeDiff?.weekOfMonth != nil, timeDiff?.weekOfMonth != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "اسبوع"
+                       }
+                   } else if timeDiff?.day != nil, timeDiff?.day != 0 {
+                       if let str = (timeDiff?.day)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "يوم"
+                       }
+                   } else if timeDiff?.hour != nil, timeDiff?.hour != 0 {
+                       if let str = (timeDiff?.hour)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "ساعة"
+                       }
+                   } else if timeDiff?.minute != nil, timeDiff?.minute != 0 {
+                       if let str = (timeDiff?.month)?.numtoArabic() {
+                       timeLabel.text = "منذ " + str + "دقيقة"
+                       }
+                   } else {
+                       timeLabel.text = "منذ لحظة"
+                    }
+    }
 }
-extension Int{
-    func numtoArabic()-> String{
-        if self == 1{
+extension Int {
+   //    swiftlint:disable cyclomatic_complexity
+  //     swiftlint:disable function_body_length
+    func numtoArabic() -> String {
+        if self == 1 {
             return "١"
         }
-        if self == 2{
+        if self == 2 {
             return "٢"
         }
-        if self == 3{
+        if self == 3 {
             return "٣"
         }
-        if self == 4{
+        if self == 4 {
             return "٤"
         }
-        if self == 5{
+        if self == 5 {
             return "٥"
         }
-        if self == 6{
+        if self == 6 {
             return "٦"
         }
-        if self == 7{
+        if self == 7 {
             return "٧"
         }
-        if self == 8{
+        if self == 8 {
             return "٨"
         }
-        if self == 9{
+        if self == 9 {
             return "٩"
         }
-        if self == 10{
+        if self == 10 {
             return "١٠"
         }
-        if self == 11{
+        if self == 11 {
             return "١١"
         }
-        if self == 12{
+        if self == 12 {
             return "١٣"
         }
-        if self == 13{
+        if self == 13 {
             return "١٢"
         }
 
-        if self == 14{
+        if self == 14 {
             return "١٤"
         }
 
-        if self == 15{
+        if self == 15 {
             return "١٥"
         }
 
-        if self == 16{
+        if self == 16 {
             return "١٦"
         }
 
-        if self == 17{
+        if self == 17 {
             return "١٧"
         }
-        if self == 18{
+        if self == 18 {
             return "١٨"
         }
-        if self == 19{
+        if self == 19 {
             return "١٩"
         }
-        if self == 20{
+        if self == 20 {
             return "٢٠"
         }
-        if self == 21{
+        if self == 21 {
             return "٢١"
         }
-        if self == 22{
+        if self == 22 {
             return "٢٢"
         }
-        if self == 23{
+        if self == 23 {
             return "٢٣"
         }
-        if self == 24{
+        if self == 24 {
             return "٢٤"
         }
-        if self == 25{
+        if self == 25 {
             return "٢٥"
         }
-        if self == 26{
+        if self == 26 {
             return "٢٦"
         }
-        if self == 27{
+        if self == 27 {
             return "٢٧"
         }
-        if self == 28{
+        if self == 28 {
             return "٢٨"
         }
-        if self == 29{
+        if self == 29 {
             return "٢٩"
         }
-        if self == 30{
+        if self == 30 {
             return "٣٠"
         }
-        if self == 31{
+        if self == 31 {
             return "٣١"
         }
-
         return "٠"
     }
 }

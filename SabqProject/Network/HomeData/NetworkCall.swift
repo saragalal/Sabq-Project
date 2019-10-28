@@ -8,11 +8,11 @@
 
 import Foundation
 import Moya
-extension NetworkManager{
+extension NetworkManager {
     func getHomePageMaterial(completion: @escaping (
         _ result: Swift.Result<HomeMaterialResponse, MoyaError>,
         _ statusCode: StatusCode?
-        ) -> Void){
+        ) -> Void) {
         provider.request(MultiTarget(HomeService.homePage)) { (result) in
             switch result {
             case .success(let response):
@@ -23,31 +23,20 @@ extension NetworkManager{
                         dump(resp)
                         completion(.success(resp), response.statusCode)
                     } catch {
-                       // completion(.failure(<#Failure#>), response.statusCode)
+                      //  completion(.failure(error), response.statusCode)
                     }
                 }
-//                else {
-//                    // 300-399 ,400-499
-//                    do {
-//                        var businessError = try JSONDecoder().decode(NetworkError.self, from: response.data)
-//                        businessError.type = .business
-//                        completion(.failure(businessError), response.statusCode)
-//                    } catch {
-//                        completion(.failure(NetworkError.parseError), response.statusCode)
-//                    }
-          //    }
-                
             case .failure(let error):
                 print(error)
 //                let customError = NetworkError(error: error)
-//                completion(.failure(customError), nil)
+                completion(.failure(error), nil)
             }
         }
     }
     func getHomePageVideo(completion: @escaping (
         _ result: Swift.Result<HomeImagesVideoResponse, MoyaError>,
         _ statusCode: StatusCode?
-        ) -> Void){
+        ) -> Void) {
         provider.request(MultiTarget(HomeService.homeVideo)) { (result) in
             switch result {
             case .success(let response):
@@ -62,28 +51,17 @@ extension NetworkManager{
                         // completion(.failure(Failure), response.statusCode)
                     }
                 }
-                //                else {
-                //                    // 300-399 ,400-499
-                //                    do {
-                //                        var businessError = try JSONDecoder().decode(NetworkError.self, from: response.data)
-                //                        businessError.type = .business
-                //                        completion(.failure(businessError), response.statusCode)
-                //                    } catch {
-                //                        completion(.failure(NetworkError.parseError), response.statusCode)
-                //                    }
-                //    }
-                
             case .failure(let error):
                 print(error)
                 //                let customError = NetworkError(error: error)
-                //                completion(.failure(customError), nil)
+                            completion(.failure(error), nil)
             }
         }
     }
     func getHomePageImages(completion: @escaping (
         _ result: Swift.Result<HomeImagesVideoResponse, MoyaError>,
         _ statusCode: StatusCode?
-        ) -> Void){
+        ) -> Void) {
         provider.request(MultiTarget(HomeService.homeImage)) { (result) in
             switch result {
             case .success(let response):
@@ -94,32 +72,20 @@ extension NetworkManager{
                         dump(resp)
                         completion(.success(resp), response.statusCode)
                     } catch {
-                       
-                        // completion(.failure(<#Failure#>), response.statusCode)
+                       //  completion(.failure(error), response.statusCode)
                     }
                 }
-                //                else {
-                //                    // 300-399 ,400-499
-                //                    do {
-                //                        var businessError = try JSONDecoder().decode(NetworkError.self, from: response.data)
-                //                        businessError.type = .business
-                //                        completion(.failure(businessError), response.statusCode)
-                //                    } catch {
-                //                        completion(.failure(NetworkError.parseError), response.statusCode)
-                //                    }
-                //    }
-                
             case .failure(let error):
                 print(error)
                 //                let customError = NetworkError(error: error)
-                //                completion(.failure(customError), nil)
+                               completion(.failure(error), nil)
             }
         }
     }
     func getHomePageArticles(completion: @escaping (
         _ result: Swift.Result<HomeArticlesResponse, MoyaError>,
         _ statusCode: StatusCode?
-        ) -> Void){
+        ) -> Void) {
         provider.request(MultiTarget(HomeService.homeArticle)) { (result) in
             switch result {
             case .success(let response):
@@ -133,21 +99,11 @@ extension NetworkManager{
                         // completion(.failure(<#Failure#>), response.statusCode)
                     }
                 }
-                //                else {
-                //                    // 300-399 ,400-499
-                //                    do {
-                //                        var businessError = try JSONDecoder().decode(NetworkError.self, from: response.data)
-                //                        businessError.type = .business
-                //                        completion(.failure(businessError), response.statusCode)
-                //                    } catch {
-                //                        completion(.failure(NetworkError.parseError), response.statusCode)
-                //                    }
-                //    }
-                
+              
             case .failure(let error):
                 print(error)
                 //                let customError = NetworkError(error: error)
-                //                completion(.failure(customError), nil)
+                            completion(.failure(error), nil)
             }
         }
     }

@@ -26,7 +26,7 @@ class BaseViewController: UIViewController, BaseViewProtocol {
     func showSuccessMessage() {
         print("showSuccessMessage")
     }
-    func showErrorMessage() {
+    func showErrorMessage(title: String?, message: String?) {
         print("showErrorMessage")
     }
     

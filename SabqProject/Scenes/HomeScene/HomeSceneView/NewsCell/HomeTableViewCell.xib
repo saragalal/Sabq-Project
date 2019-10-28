@@ -149,7 +149,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH1-sz-y1a" customClass="FBShimmeringView">
                                 <rect key="frame" x="298" y="11" width="149" height="170"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-0u-1ef">
+                                    <imageView clipsSubviews="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-0u-1ef">
                                         <rect key="frame" x="50" y="52" width="49" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49.000000000000007" id="4em-NO-eaZ"/>

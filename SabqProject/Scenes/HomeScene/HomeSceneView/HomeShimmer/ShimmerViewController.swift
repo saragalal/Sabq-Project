@@ -10,51 +10,57 @@ import UIKit
 
 class ShimmerViewController: UIViewController {
 
-    @IBOutlet weak var img2: UIImageView!
-    @IBOutlet weak var img1: UIImageView!
-    @IBOutlet weak var imgView1: UIImageView!
-    @IBOutlet weak var imgView2: UIImageView!
-    @IBOutlet weak var imgView3: UIImageView!
-    @IBOutlet weak var imgView4: UIImageView!
-    @IBOutlet weak var imgView5: UIImageView!
-    @IBOutlet weak var imgView6: UIImageView!
+    @IBOutlet weak private var img2: UIImageView!
+    @IBOutlet weak private var img1: UIImageView!
+    @IBOutlet weak private var imgView1: UIImageView!
+    @IBOutlet weak private var imgView2: UIImageView!
+    @IBOutlet weak private var imgView3: UIImageView!
+    @IBOutlet weak private var imgView4: UIImageView!
+    @IBOutlet weak private var imgView5: UIImageView!
+    @IBOutlet weak private var imgView6: UIImageView!
     
-    @IBOutlet weak var view10: UILabel!
-    @IBOutlet weak var view9: UILabel!
-    @IBOutlet weak var view8: UILabel!
-    @IBOutlet weak var view7: UILabel!
-    @IBOutlet weak var view6: UILabel!
-    @IBOutlet weak var view5: UILabel!
-    @IBOutlet weak var view4: UILabel!
-    @IBOutlet weak var view3: UILabel!
-    @IBOutlet weak var view2: UILabel!
-    @IBOutlet weak var view1: UILabel!
+    @IBOutlet weak private var view10: UILabel!
+    @IBOutlet weak private var view9: UILabel!
+    @IBOutlet weak private var view8: UILabel!
+    @IBOutlet weak private var view7: UILabel!
+    @IBOutlet weak private var view6: UILabel!
+    @IBOutlet weak private var view5: UILabel!
+    @IBOutlet weak private var view4: UILabel!
+    @IBOutlet weak private var view3: UILabel!
+    @IBOutlet weak private var view2: UILabel!
+    @IBOutlet weak private var view1: UILabel!
     override func viewDidLoad() {
          super.viewDidLoad()
+       setUpViews()
+      setUpImages()
+    }
+    func setUpImages() {
         self.img1.layer.masksToBounds = false
-        self.img1.layer.cornerRadius = 10
-        self.img1.clipsToBounds = true
-        self.img2.layer.masksToBounds = false
-        self.img2.layer.cornerRadius = 10
-        self.img2.clipsToBounds = true
-        self.imgView1.layer.masksToBounds = false
-        self.imgView1.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView1.clipsToBounds = true
-        self.imgView2.layer.masksToBounds = false
-        self.imgView2.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView2.clipsToBounds = true
-        self.imgView3.layer.masksToBounds = false
-        self.imgView3.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView3.clipsToBounds = true
-        self.imgView4.layer.masksToBounds = false
-        self.imgView4.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView4.clipsToBounds = true
-        self.imgView5.layer.masksToBounds = false
-        self.imgView5.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView5.clipsToBounds = true
-        self.imgView6.layer.masksToBounds = false
-        self.imgView6.layer.cornerRadius = self.imgView1.frame.width/2
-        self.imgView6.clipsToBounds = true
+               self.img1.layer.cornerRadius = 10
+               self.img1.clipsToBounds = true
+               self.img2.layer.masksToBounds = false
+               self.img2.layer.cornerRadius = 10
+               self.img2.clipsToBounds = true
+               self.imgView1.layer.masksToBounds = false
+               self.imgView1.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView1.clipsToBounds = true
+               self.imgView2.layer.masksToBounds = false
+               self.imgView2.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView2.clipsToBounds = true
+               self.imgView3.layer.masksToBounds = false
+               self.imgView3.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView3.clipsToBounds = true
+               self.imgView4.layer.masksToBounds = false
+               self.imgView4.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView4.clipsToBounds = true
+               self.imgView5.layer.masksToBounds = false
+               self.imgView5.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView5.clipsToBounds = true
+               self.imgView6.layer.masksToBounds = false
+               self.imgView6.layer.cornerRadius = self.imgView1.frame.width / 2
+               self.imgView6.clipsToBounds = true
+    }
+    func setUpViews() {
         self.view1.layer.masksToBounds = false
         self.view1.layer.cornerRadius = 10
         self.view1.clipsToBounds = true
@@ -85,7 +91,5 @@ class ShimmerViewController: UIViewController {
         self.view10.layer.masksToBounds = false
         self.view10.layer.cornerRadius = 10
         self.view10.clipsToBounds = true
-        
     }
-
 }

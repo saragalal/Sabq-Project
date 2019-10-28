@@ -7,97 +7,98 @@
 //
 
 import Foundation
-struct Materials : Codable {
-    let id : String?
-    let title : String?
-    let secondaryTitle : String?
-    let description : String?
-    let publishDate : String?
-    let publishDateHijryDate : String?
-    let updateDate : String?
-    let updateDateHijryDate : String?
-    let categoryName : String?
-    let parentCategoryName : String?
-    let coverPhoto : String?
-    let coverPhotoCaption : String?
-    let authorName : String?
-    let url : String?
-    let materialType : String?
-    let authorImg : String?
-    let authorCity : String?
-    let multipleAuthors : Bool?
-    let imagesCount : Int?
-    let videosCount : Int?
-    let noOfLikes : Int?
-    let noOfShares : Int?
-    let noOfViews : Int?
-    let noOfComments : Int?
-    let liked : Bool?
-    let readLater : Bool?
-    let materialUpdated : Bool?
-    let isEdit : Bool?
-    let hasRelatedMaterials : Bool?
-    let authors : [String]?
-    let images : [Images]?
-    let videos : [Videos]?
-    let attachements : [Attachments]?
-    let tags : [Tags]?
-    let updates : [String]?
-    let relatedMaterials : [String]?
-    let matarialDisplayed : String?
-    let comments : [String]?
-    let descriptionString : String?
-    let city : String?
-    let commentsEnabled : Bool?
-    let commentsMinCharacters : Int?
-    let commentsMaxCharacters : Int?
-    var type : String?
+struct Materials: Codable {
+    let id: String?
+    let title: String?
+    let secondaryTitle: String?
+    let description: String?
+    let publishDate: String?
+    let publishDateHijryDate: String?
+    let updateDate: String?
+    let updateDateHijryDate: String?
+    let categoryName: String?
+    let parentCategoryName: String?
+    let coverPhoto: String?
+    let coverPhotoCaption: String?
+    let authorName: String?
+    let url: String?
+    let materialType: String?
+    let authorImg: String?
+    let authorCity: String?
+    let multipleAuthors: Bool?
+    let imagesCount: Int?
+    let videosCount: Int?
+    let noOfLikes: Int?
+    let noOfShares: Int?
+    let noOfViews: Int?
+    let noOfComments: Int?
+    let liked: Bool?
+    let readLater: Bool?
+    let materialUpdated: Bool?
+    let isEdit: Bool?
+    let hasRelatedMaterials: Bool?
+    let authors: [String]?
+    let images: [Images]?
+    let videos: [Videos]?
+    let attachements: [Attachments]?
+    let tags: [Tags]?
+    let updates: [String]?
+    let relatedMaterials: [String]?
+    let matarialDisplayed: String?
+    let comments: [String]?
+    let descriptionString: String?
+    let city: String?
+    let commentsEnabled: Bool?
+    let commentsMinCharacters: Int?
+    let commentsMaxCharacters: Int?
+    var type: String?
     enum CodingKeys: String, CodingKey {
         
-        case id = "id"
-        case title = "title"
-        case secondaryTitle = "secondaryTitle"
-        case description = "description"
-        case publishDate = "publishDate"
-        case publishDateHijryDate = "publishDateHijryDate"
-        case updateDate = "updateDate"
-        case updateDateHijryDate = "updateDateHijryDate"
-        case categoryName = "categoryName"
-        case parentCategoryName = "parentCategoryName"
-        case coverPhoto = "coverPhoto"
-        case coverPhotoCaption = "coverPhotoCaption"
-        case authorName = "authorName"
-        case url = "url"
-        case materialType = "materialType"
-        case authorImg = "authorImg"
-        case authorCity = "authorCity"
-        case multipleAuthors = "multipleAuthors"
-        case imagesCount = "imagesCount"
-        case videosCount = "videosCount"
-        case noOfLikes = "noOfLikes"
-        case noOfShares = "noOfShares"
-        case noOfViews = "noOfViews"
-        case noOfComments = "noOfComments"
-        case liked = "liked"
-        case readLater = "readLater"
-        case materialUpdated = "materialUpdated"
-        case isEdit = "isEdit"
-        case hasRelatedMaterials = "hasRelatedMaterials"
-        case authors = "authors"
-        case images = "images"
-        case videos = "videos"
-        case attachements = "attachements"
-        case tags = "tags"
-        case updates = "updates"
-        case relatedMaterials = "relatedMaterials"
-        case matarialDisplayed = "matarialDisplayed"
-        case comments = "comments"
-        case descriptionString = "descriptionString"
-        case city = "city"
-        case commentsEnabled = "commentsEnabled"
-        case commentsMinCharacters = "commentsMinCharacters"
-        case commentsMaxCharacters = "commentsMaxCharacters"
+        case id
+        case title
+        case secondaryTitle
+        case description
+        case publishDate
+        case publishDateHijryDate
+        case updateDate
+        case updateDateHijryDate
+        case categoryName
+        case parentCategoryName
+        case coverPhoto
+        case coverPhotoCaption
+        case authorName
+        case url
+        case materialType
+        case authorImg
+        case authorCity
+        case multipleAuthors
+        case imagesCount
+        case videosCount
+        case noOfLikes
+        case noOfShares
+        case noOfViews
+        case noOfComments
+        case liked
+        case readLater
+        case materialUpdated
+        case isEdit
+        case hasRelatedMaterials
+        case authors
+        case images
+        case videos
+        case attachements
+        case tags
+        case updates
+        case relatedMaterials
+        case matarialDisplayed
+        case comments
+        case descriptionString
+        case city
+        case commentsEnabled
+        case commentsMinCharacters
+        case commentsMaxCharacters
     }
+    //    swiftlint:disable function_body_length
     init(type: String) {
         id = "id"
         title = "title"
@@ -144,6 +145,7 @@ struct Materials : Codable {
         commentsMaxCharacters = 0
         self.type = type
     }
+    //    swiftlint:disable function_body_length
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)

@@ -7,12 +7,10 @@
 //
 
 import Foundation
-
-
-protocol BaseViewAdaptorProtocal:class {
+protocol BaseViewAdaptorProtocal: class {
     associatedtype DataType
-    var data: DataType? { get set}
-    var reloadData:(() -> Void)? { get set}
+    var data: DataType? { get set }
+    var reloadData:(() -> Void)? { get set }
     func count(name array: String) -> Int?
     func clear(reload: Bool)
     func add(item: DataType?)

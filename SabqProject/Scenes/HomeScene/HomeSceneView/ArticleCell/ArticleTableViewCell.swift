@@ -9,20 +9,21 @@
 import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var collectionView: UICollectionView!
     private var articleAdaptor: ArticleCellAdaptor?
     var identifier = String.articleCollectionCellIdentifier()
     override func awakeFromNib() {
         super.awakeFromNib()
-collectionView.register(UINib(nibName:identifier, bundle: nil), forCellWithReuseIdentifier: identifier)
+collectionView.register(UINib(nibName: identifier, bundle: nil),
+                        forCellWithReuseIdentifier: identifier)
         collectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
     }
-    func configureCell(articles: [Materials?]?){
+    func configureCell(articles: [Materials?]?) {
         articleAdaptor = ArticleCellAdaptor()
         articleAdaptor?.setAdaptor(collectionView: collectionView, reloadData: reloadCollectionView)
         articleAdaptor?.add(item: articles)
     }
-    func reloadCollectionView(){
+    func reloadCollectionView() {
         collectionView.reloadData()
     }
 }

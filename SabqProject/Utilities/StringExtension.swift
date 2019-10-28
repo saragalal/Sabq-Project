@@ -11,7 +11,10 @@ extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
         do {
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+return try NSAttributedString(data: data,
+                              options: [.documentType: NSAttributedString.DocumentType.html,
+                                        .characterEncoding: String.Encoding.utf8.rawValue],
+                              documentAttributes: nil)
         } catch {
             return NSAttributedString()
         }
@@ -43,7 +46,7 @@ extension String {
     static func articleTableCellIdentifier() -> String {
         return "ArticleTableViewCell"
     }
-   static func sliderViewSection() -> String{
+   static func sliderViewSection() -> String {
         return "HomeFirstSectionViewController"
     }
    static func videoCollectionCellIdentifier() -> String {
@@ -55,16 +58,16 @@ extension String {
    static func articleCollectionCellIdentifier() -> String {
         return "ArticlesCollectionViewCell"
     }
-   static func news() -> String{
+   static func news() -> String {
         return "news"
     }
-   static func videos() -> String{
+   static func videos() -> String {
            return "video"
        }
-   static func articles() -> String{
+   static func articles() -> String {
            return "article"
        }
-   static func images() -> String{
+   static func images() -> String {
         return "image"
     }
    static func slider() -> String {

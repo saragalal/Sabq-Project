@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
+import Moya
 protocol HomeSceneModelProtocol: BaseModelProtocol {
     
-    func getHomeMaterialData(compelation: @escaping ((Result<HomeMaterialResponse, Error>) -> Void))
-    func getHomeVideosData(compelation: @escaping ((Result<HomeImagesVideoResponse, Error>) -> Void))
-    func getHomeImagesData(compelation: @escaping ((Result<HomeImagesVideoResponse, Error>) -> Void))
+    func getHomeMaterialData(compelation: @escaping ((Result<HomeMaterialResponse, MoyaError>) -> Void))
+    func getHomeVideosData(compelation: @escaping ((Result<HomeImagesVideoResponse, MoyaError>) -> Void))
+    func getHomeImagesData(compelation: @escaping ((Result<HomeImagesVideoResponse, MoyaError>) -> Void))
     
-     func getHomeArticlesData(compelation: @escaping ((Result<HomeArticlesResponse, Error>) -> Void)) 
+     func getHomeArticlesData(compelation: @escaping ((Result<HomeArticlesResponse, MoyaError>) -> Void)) 
 }

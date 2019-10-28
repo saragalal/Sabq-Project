@@ -11,6 +11,6 @@ import Foundation
 protocol BaseModelProtocol {
     
 }
-extension BaseModelProtocol{
+extension BaseModelProtocol {
     
 }

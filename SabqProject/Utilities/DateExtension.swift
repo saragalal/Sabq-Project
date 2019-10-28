@@ -14,6 +14,12 @@ extension Date {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.dateFormat = "yyyy-MM-dd HH:mm ss"
-        return Calendar.current.dateComponents([.year , .month, .weekOfMonth, .day, .hour , .minute ,.second], from: self, to: now)
+        return Calendar.current.dateComponents([.year ,
+                                                .month,
+                                                .weekOfMonth,
+                                                .day,
+                                                .hour,
+                                                .minute,
+                                                .second], from: self, to: now)
     }
 }

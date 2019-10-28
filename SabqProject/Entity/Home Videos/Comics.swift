@@ -7,75 +7,72 @@
 //
 
 import Foundation
-struct Comics : Codable {
-    let id : String?
-    let title : String?
-    let secondaryTitle : String?
-    let description : String?
-    let publishDate : String?
-    let publishDateHijryDate : String?
-    let updateDate : String?
-    let updateDateHijryDate : String?
-    let coverPhoto : String?
-    let coverPhotoCaption : String?
-    let authorName : String?
-    let authorImg : String?
-    let authorCity : String?
-    let imagesCount : Int?
-    let noOfLikes : Int?
-    let noOfShares : Int?
-    let noOfViews : Int?
-    let noOfComments : Int?
-    let liked : Bool?
-    let readLater : Bool?
-    let isEdit : Bool?
-    let url : String?
-    let images : [String]?
-    let tags : [Tags]?
-    let comicsType : String?
-    let vid : String?
-    let videoCaption : String?
-    let comments : [String]?
-    let commentsEnabled : Bool?
-    let commentsMinCharacters : Int?
-    let commentsMaxCharacters : Int?
-    
+struct Comics: Codable {
+    let id: String?
+    let title: String?
+    let secondaryTitle: String?
+    let description: String?
+    let publishDate: String?
+    let publishDateHijryDate: String?
+    let updateDate: String?
+    let updateDateHijryDate: String?
+    let coverPhoto: String?
+    let coverPhotoCaption: String?
+    let authorName: String?
+    let authorImg: String?
+    let authorCity: String?
+    let imagesCount: Int?
+    let noOfLikes: Int?
+    let noOfShares: Int?
+    let noOfViews: Int?
+    let noOfComments: Int?
+    let liked: Bool?
+    let readLater: Bool?
+    let isEdit: Bool?
+    let url: String?
+    let images: [String]?
+    let tags: [Tags]?
+    let comicsType: String?
+    let vid: String?
+    let videoCaption: String?
+    let comments: [String]?
+    let commentsEnabled: Bool?
+    let commentsMinCharacters: Int?
+    let commentsMaxCharacters: Int?
     enum CodingKeys: String, CodingKey {
-        
-        case id = "id"
-        case title = "title"
-        case secondaryTitle = "secondaryTitle"
-        case description = "description"
-        case publishDate = "publishDate"
-        case publishDateHijryDate = "publishDateHijryDate"
-        case updateDate = "updateDate"
-        case updateDateHijryDate = "updateDateHijryDate"
-        case coverPhoto = "coverPhoto"
-        case coverPhotoCaption = "coverPhotoCaption"
-        case authorName = "authorName"
-        case authorImg = "authorImg"
-        case authorCity = "authorCity"
-        case imagesCount = "imagesCount"
-        case noOfLikes = "noOfLikes"
-        case noOfShares = "noOfShares"
-        case noOfViews = "noOfViews"
-        case noOfComments = "noOfComments"
-        case liked = "liked"
-        case readLater = "readLater"
-        case isEdit = "isEdit"
-        case url = "url"
-        case images = "images"
-        case tags = "tags"
-        case comicsType = "comicsType"
-        case vid = "vid"
-        case videoCaption = "videoCaption"
-        case comments = "comments"
-        case commentsEnabled = "commentsEnabled"
-        case commentsMinCharacters = "commentsMinCharacters"
-        case commentsMaxCharacters = "commentsMaxCharacters"
+        case id
+        case title
+        case secondaryTitle
+        case description
+        case publishDate
+        case publishDateHijryDate
+        case updateDate
+        case updateDateHijryDate
+        case coverPhoto
+        case coverPhotoCaption
+        case authorName
+        case authorImg
+        case authorCity
+        case imagesCount
+        case noOfLikes
+        case noOfShares
+        case noOfViews
+        case noOfComments
+        case liked
+        case readLater
+        case isEdit
+        case url
+        case images
+        case tags
+        case comicsType
+        case vid
+        case videoCaption
+        case comments
+        case commentsEnabled
+        case commentsMinCharacters
+        case commentsMaxCharacters
     }
-    
-    init(from decoder: Decoder) throws {
+   init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         title = try values.decodeIfPresent(String.self, forKey: .title)
@@ -109,5 +106,4 @@ struct Comics : Codable {
         commentsMinCharacters = try values.decodeIfPresent(Int.self, forKey: .commentsMinCharacters)
         commentsMaxCharacters = try values.decodeIfPresent(Int.self, forKey: .commentsMaxCharacters)
     }
-    
 }

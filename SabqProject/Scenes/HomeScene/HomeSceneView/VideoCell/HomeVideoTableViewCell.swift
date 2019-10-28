@@ -10,21 +10,21 @@ import UIKit
 
 class HomeVideoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var collectionView: UICollectionView!
     var cellIdentifier = String.videoCollectionCellIdentifier()
     private var videoAdaptor: VideoCellAdaptor?
     override func awakeFromNib() {
         super.awakeFromNib()
-        collectionView.register(UINib(nibName:cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.transform = CGAffineTransform(scaleX: -1, y: 1)
         videoAdaptor = VideoCellAdaptor()
-        videoAdaptor?.setAdaptor(collectionView: collectionView,reloadData: reloadCollectionView)
+        videoAdaptor?.setAdaptor(collectionView: collectionView, reloadData: reloadCollectionView)
     }
     
-    func configureCell(videos: [Comics?]?){
+    func configureCell(videos: [Comics?]?) {
        videoAdaptor?.add(item: videos)
     }
-    func reloadCollectionView(){
+    func reloadCollectionView() {
         collectionView.reloadData()
     }
 }

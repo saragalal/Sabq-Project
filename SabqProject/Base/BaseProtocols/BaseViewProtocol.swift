@@ -14,7 +14,7 @@ protocol BaseViewProtocol {
     @objc
     optional func hideLoading()
     @objc
-    optional func loadDataSuccess(date:Any)
+    optional func loadDataSuccess(date: Any)
     @objc
     optional func loadDataFailed(with error: Error?)
     @objc

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DetailsSceneViewProtocol: BaseViewProtocol{
+protocol DetailsSceneViewProtocol: BaseViewProtocol {
     
 }

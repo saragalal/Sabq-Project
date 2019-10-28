@@ -23,7 +23,7 @@ class HomeScenePresenter: HomeScenePresenterProtocol {
             case .success(let response):
                 self.view?.addHomeResponse(response: response)
                 self.model.getHomeVideosData(compelation: { (result) in
-                    switch result{
+                    switch result {
                     case .success(let response):
                         self.view?.addVideoArray(videos: response.comics)
                         self.model.getHomeImagesData(compelation: { (result) in
@@ -37,19 +37,23 @@ class HomeScenePresenter: HomeScenePresenterProtocol {
                                         self.view?.addArticleArray(articles: response.materials)
                                         print(response)
                                     case .failure(let error):
+                                        self.view?.showErrorMessage?(title: "", message: error.errorDescription)
                                         print(error)
                                     }
                                 })
                             case .failure(let error):
+                                self.view?.showErrorMessage?(title: "", message: error.errorDescription)
                                 print(error)
                             }
 
                         })
                     case .failure(let error):
+                        self.view?.showErrorMessage?(title: "", message: error.errorDescription)
                         print(error)
                     }
                 })
             case .failure(let error):
+                self.view?.showErrorMessage?(title: "", message: error.errorDescription)
                 print(error)
             }
         }

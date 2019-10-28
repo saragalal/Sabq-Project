@@ -9,14 +9,12 @@
 import UIKit
 import SDWebImage
 class HomeVideosCollectionViewCell: UICollectionViewCell {
-
-    
-    @IBOutlet weak var loadedImg: UIImageView!
-    @IBOutlet weak var shimmerView: FBShimmeringView!
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var titleLb: UILabel!
-    @IBOutlet weak var durationLb: UILabel!
-    @IBOutlet weak var bookmarkImg: UIImageView!
+    @IBOutlet weak private var loadedImg: UIImageView!
+    @IBOutlet weak private var shimmerView: FBShimmeringView!
+    @IBOutlet weak private var imgView: UIImageView!
+    @IBOutlet weak private var titleLb: UILabel!
+    @IBOutlet weak private var durationLb: UILabel!
+    @IBOutlet weak private var bookmarkImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,17 +23,16 @@ class HomeVideosCollectionViewCell: UICollectionViewCell {
     self.contentView.transform = CGAffineTransform(scaleX: -1, y: 1)
         titleLb.text = item?.title
      showLoading()
-    if let urlString = item?.authorImg{
+    if let urlString = item?.authorImg {
             //imgView.sd_setImage(with: URL(string: urlString), placeholderImage: UIImage(named: "noimage.png"))
-            imgView.sd_setImage(with: URL(string: urlString)) { (image, error, cache, url) in
+            imgView.sd_setImage(with: URL(string: urlString)) { (image, error, _, _) in
                self.hideLoading()
                 if error != nil {
-                   self.imgView.image = UIImage(named: "noimage.png")
+                   self.imgView.image = #imageLiteral(resourceName: "noimage")
                 }
             }
-        }
-        else {
-            imgView.image = UIImage(named: "noimage.png")
+        } else {
+            imgView.image = #imageLiteral(resourceName: "noimage")
         }
     }
   func showLoading() {

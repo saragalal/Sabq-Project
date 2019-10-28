@@ -7,14 +7,14 @@
 //
 
 import Foundation
-struct Videos : Codable {
-    let vid : String?
-    let caption : String?
+struct Videos: Codable {
+    let vid: String?
+    let caption: String?
     
     enum CodingKeys: String, CodingKey {
         
-        case vid = "vid"
-        case caption = "caption"
+        case vid
+        case caption
     }
     
     init(from decoder: Decoder) throws {

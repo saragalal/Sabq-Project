@@ -9,7 +9,7 @@
 import Foundation
 
 extension AppDelegate {
-    func setupNetworking(){
+    func setupNetworking() {
         NetworkManager.shared = NetworkManager(config: NetworkDefaults())
     }
     

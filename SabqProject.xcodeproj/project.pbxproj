@@ -90,6 +90,7 @@
 		92D95DE223575CAF009B27A5 /* DetailsScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D95DE123575CAF009B27A5 /* DetailsScenePresenter.swift */; };
 		92EAFD0F2361D9340033F760 /* ShimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAFD0D2361D9340033F760 /* ShimmerViewController.swift */; };
 		92EAFD102361D9340033F760 /* ShimmerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92EAFD0E2361D9340033F760 /* ShimmerViewController.xib */; };
+		92F76AB62366FA2300D86758 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 92F76AB52366FA2300D86758 /* .swiftlint.yml */; };
 		E3230097FEDDE62930742054 /* Pods_SabqProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D838CDEA347CD71319929EC8 /* Pods_SabqProjectTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +207,7 @@
 		92D95DE123575CAF009B27A5 /* DetailsScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScenePresenter.swift; sourceTree = "<group>"; };
 		92EAFD0D2361D9340033F760 /* ShimmerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerViewController.swift; sourceTree = "<group>"; };
 		92EAFD0E2361D9340033F760 /* ShimmerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShimmerViewController.xib; sourceTree = "<group>"; };
+		92F76AB52366FA2300D86758 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A681D5080056A3923EB4BDA1 /* Pods-SabqProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SabqProject.debug.xcconfig"; path = "Target Support Files/Pods-SabqProject/Pods-SabqProject.debug.xcconfig"; sourceTree = "<group>"; };
 		C3364CBEBF5D397150EDBD44 /* Pods_SabqProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SabqProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D838CDEA347CD71319929EC8 /* Pods_SabqProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SabqProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -474,6 +476,7 @@
 		92D95D90235754C7009B27A5 = {
 			isa = PBXGroup;
 			children = (
+				92F76AB52366FA2300D86758 /* .swiftlint.yml */,
 				92D95D9B235754C7009B27A5 /* SabqProject */,
 				92D95DB0235754C7009B27A5 /* SabqProjectTests */,
 				92D95DBB235754C7009B27A5 /* SabqProjectUITests */,
@@ -685,6 +688,7 @@
 				92D95D96235754C7009B27A5 /* Frameworks */,
 				92D95D97235754C7009B27A5 /* Resources */,
 				F7CB9E1EE7B08FD21BEE4F4F /* [CP] Embed Pods Frameworks */,
+				92F76AB42366F85300D86758 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -781,6 +785,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F76AB62366FA2300D86758 /* .swiftlint.yml in Resources */,
 				92D95DA7235754C7009B27A5 /* LaunchScreen.storyboard in Resources */,
 				9252A634235C5C3A0099EF0E /* HomeTableViewCell.xib in Resources */,
 				92D95DA4235754C7009B27A5 /* Assets.xcassets in Resources */,
@@ -883,6 +888,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		92F76AB42366F85300D86758 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		F7CB9E1EE7B08FD21BEE4F4F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

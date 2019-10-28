@@ -7,14 +7,14 @@
 //
 
 import Foundation
-struct HomeArticlesResponse : Codable {
-    let materials : [Materials]?
-    let code : Int?
+struct HomeArticlesResponse: Codable {
+    let materials: [Materials]?
+    let code: Int?
     
     enum CodingKeys: String, CodingKey {
         
-        case materials = "materials"
-        case code = "code"
+        case materials
+        case code
     }
     
     init(from decoder: Decoder) throws {

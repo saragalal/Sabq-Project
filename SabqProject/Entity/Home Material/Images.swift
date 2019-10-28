@@ -7,14 +7,14 @@
 //
 
 import Foundation
-struct Images : Codable {
-    let url : String?
-    let caption : String?
+struct Images: Codable {
+    let url: String?
+    let caption: String?
     
     enum CodingKeys: String, CodingKey {
         
-        case url = "url"
-        case caption = "caption"
+        case url
+        case caption 
     }
     
     init(from decoder: Decoder) throws {

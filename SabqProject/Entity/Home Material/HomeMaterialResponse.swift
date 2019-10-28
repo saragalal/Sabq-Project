@@ -8,14 +8,14 @@
 
 import Foundation
 struct HomeMaterialResponse: Codable {
-let slider : [Slider?]?
-var materials : [Materials?]?
-let code : Int?
+let slider: [Slider?]?
+var materials: [Materials?]?
+let code: Int?
 
 enum CodingKeys: String, CodingKey {
-    case slider = "slider"
-    case materials = "materials"
-    case code = "code"
+    case slider
+    case materials
+    case code
 }
 
 init(from decoder: Decoder) throws {

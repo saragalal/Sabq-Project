@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BasePresenter : BasePresenterProtocol {
+class BasePresenter: BasePresenterProtocol {
 
     var view: BaseViewProtocol?
     var model: BaseModelProtocol
