@@ -45,7 +45,7 @@
                             <rect key="frame" x="26" y="52" width="343" height="200"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="PuY-M2-e1e">
-                                    <rect key="frame" x="147" y="67" width="49.000000000000014" height="66"/>
+                                    <rect key="frame" x="147" y="67" width="49" height="66"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="66" id="8vh-B1-hMI"/>
                                         <constraint firstAttribute="width" constant="49" id="Z9A-TI-grE"/>

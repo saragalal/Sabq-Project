@@ -98,22 +98,38 @@ extension HomeSceneViewAdaptor: UITableViewDataSource, UITableViewDelegate {
         if let count = self.sectionNumber() {
             return count
         }
-        return 0
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            if let count = self.count(name: String.slider()) {
-                return count
+            if let counts = self.count(name: String.slider()), counts != 0 {
+                return counts
             }
-            return 0
+            return 1
         } else {
-            if let cellNumber = self.count(name: String.materials()) {
+            if let cellNumber = self.count(name: String.materials()), cellNumber != 0 {
                 return cellNumber
             }
-            return 0
+            return 1
         }
     }
+     //    swiftlint:disable cyclomatic_complexity
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if data == nil {
+        if indexPath.section == 0 {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.sliderTableCellIdentifier(),
+                                                    for: indexPath) as? SliderTableViewCell {
+            return cell
+          }
+        } else if indexPath.section == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShimmerCell",
+                                                        for: indexPath) as? NewsShimmerCell {
+               
+                return cell
+           }
+        }
+        fatalError("can't create cell")
+    } else {
         if indexPath.section == 0 {
       if let cell = tableView.dequeueReusableCell(withIdentifier: String.sliderTableCellIdentifier(),
                                                   for: indexPath) as? SliderTableViewCell {
@@ -168,8 +184,16 @@ if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCell
            }
             fatalError("can't create cell")
         }
+      }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if data == nil {
+            if indexPath.section == 0 {
+                return 350
+            } else {
+                return 100
+            }
+        }
         if indexPath.section == 0 {
             return 500
         }

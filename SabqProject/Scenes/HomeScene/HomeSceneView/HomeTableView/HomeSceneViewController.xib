@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeSceneViewController" customModule="SabqProject" customModuleProvider="target">
             <connections>
                 <outlet property="homeTableView" destination="NKa-5i-iSO" id="sjy-Qo-guP"/>
-                <outlet property="shimmerView" destination="xnH-wP-drH" id="JBW-yw-Lgy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,24 +23,22 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NKa-5i-iSO">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" name="backgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </tableView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnH-wP-drH" customClass="FBShimmeringView">
-                    <rect key="frame" x="10" y="10" width="335" height="647"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
             </subviews>
             <color key="backgroundColor" name="backgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xnH-wP-drH" secondAttribute="bottom" constant="10" id="3QZ-qU-a2M"/>
-                <constraint firstItem="xnH-wP-drH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="6H4-JH-1en"/>
-                <constraint firstItem="xnH-wP-drH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="EYh-8B-7Dy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NKa-5i-iSO" secondAttribute="trailing" id="Isp-NZ-jzN"/>
                 <constraint firstItem="NKa-5i-iSO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="njE-e6-AKl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xnH-wP-drH" secondAttribute="trailing" constant="30" id="p3v-oI-Chj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NKa-5i-iSO" secondAttribute="bottom" id="rzA-WW-GmF"/>
                 <constraint firstItem="NKa-5i-iSO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wTx-Ak-GsN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="39.200000000000003" y="595.05247376311854"/>
         </view>
     </objects>
