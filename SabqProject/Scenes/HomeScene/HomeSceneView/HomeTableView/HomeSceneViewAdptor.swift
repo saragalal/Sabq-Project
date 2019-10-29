@@ -144,7 +144,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
         if data == nil {
             if indexPath.section == 0 {
-                return 400
+                return 350
             }
         } else {
         if indexPath.section == 0 {
