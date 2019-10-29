@@ -75,6 +75,7 @@
 		92C5BBF5235EE31B00127B9B /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C5BBF3235EE31B00127B9B /* ArticleTableViewCell.xib */; };
 		92C5BBFA235EE34500127B9B /* ImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5BBF8235EE34500127B9B /* ImagesTableViewCell.swift */; };
 		92C5BBFB235EE34500127B9B /* ImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C5BBF9235EE34500127B9B /* ImagesTableViewCell.xib */; };
+		92CC34CD2368159A0020D7F4 /* shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC34CC2368159A0020D7F4 /* shimmer.swift */; };
 		92D95D9D235754C7009B27A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D95D9C235754C7009B27A5 /* AppDelegate.swift */; };
 		92D95DA4235754C7009B27A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D95DA3235754C7009B27A5 /* Assets.xcassets */; };
 		92D95DA7235754C7009B27A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D95DA5235754C7009B27A5 /* LaunchScreen.storyboard */; };
@@ -186,6 +187,7 @@
 		92C5BBF3235EE31B00127B9B /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 		92C5BBF8235EE34500127B9B /* ImagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTableViewCell.swift; sourceTree = "<group>"; };
 		92C5BBF9235EE34500127B9B /* ImagesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesTableViewCell.xib; sourceTree = "<group>"; };
+		92CC34CC2368159A0020D7F4 /* shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shimmer.swift; sourceTree = "<group>"; };
 		92D95D99235754C7009B27A5 /* SabqProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SabqProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D95D9C235754C7009B27A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92D95DA3235754C7009B27A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				92055450235899AC00F3079C /* UIColorExtension.swift */,
 				9212E8EF235DE54E00BEBD0B /* StringExtension.swift */,
 				92C5BBEA235EDFF900127B9B /* DateExtension.swift */,
+				92CC34CC2368159A0020D7F4 /* shimmer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 				92D95D9D235754C7009B27A5 /* AppDelegate.swift in Sources */,
 				9252A656235C953F0099EF0E /* Slider.swift in Sources */,
 				9252A633235C5C3A0099EF0E /* HomeTableViewCell.swift in Sources */,
+				92CC34CD2368159A0020D7F4 /* shimmer.swift in Sources */,
 				9252A643235C7B020099EF0E /* ImagesCollectionViewCell.swift in Sources */,
 				9205543023586E3300F3079C /* BaseViewProtocol.swift in Sources */,
 			);

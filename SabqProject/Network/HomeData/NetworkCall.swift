@@ -20,7 +20,6 @@ extension NetworkManager {
                     do {
                         print(response.data)
                         let resp = try JSONDecoder().decode(HomeMaterialResponse.self, from: response.data)
-                        dump(resp)
                         completion(.success(resp), response.statusCode)
                     } catch {
                       //  completion(.failure(error), response.statusCode)

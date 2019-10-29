@@ -29,7 +29,7 @@ class HomeTableViewCell: UITableViewCell {
         if item != nil {
           material = item
             setTimeLabel(item: item)
-          let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(handleTap))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
           gestureRecognizer.numberOfTapsRequired = 1
           bookmarkImg.addGestureRecognizer(gestureRecognizer)
             if let urlString = item?.coverPhoto {
