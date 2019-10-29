@@ -16,7 +16,9 @@ class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
     private lazy var shimmer = ShimmerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
+homeTableView.register(UINib(nibName: "SliderShimmerCell",
+                             bundle: nil), forCellReuseIdentifier: "SliderShimmerCell")
 homeTableView.register(UINib(nibName: "NewsShimmerCell",
                              bundle: nil), forCellReuseIdentifier: "NewsShimmerCell")
 homeTableView.register(UINib(nibName: String.sliderTableCellIdentifier(),

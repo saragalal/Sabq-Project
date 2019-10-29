@@ -10,15 +10,17 @@ import UIKit
 
 class NewsShimmerCell: UITableViewCell {
 
+    @IBOutlet private weak var titleLabel: UILabel!
+@IBOutlet private weak var newsImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        setupCell()
     }
     
+    private func setupCell() {
+        self.titleLabel.spacing = 8
+        self.newsImageView.layer.cornerRadius = 5
+    }
+
 }

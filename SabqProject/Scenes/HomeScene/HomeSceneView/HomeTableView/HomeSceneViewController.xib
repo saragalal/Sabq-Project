@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" name="backgroundColor"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
                     </userDefinedRuntimeAttributes>
                 </tableView>
             </subviews>
@@ -37,7 +37,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="39.200000000000003" y="595.05247376311854"/>
         </view>

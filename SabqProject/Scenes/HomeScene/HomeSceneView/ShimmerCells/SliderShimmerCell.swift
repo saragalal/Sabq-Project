@@ -10,15 +10,13 @@ import UIKit
 
 class SliderShimmerCell: UITableViewCell {
 
+    @IBOutlet weak private var imgView: UIImageView!
+    @IBOutlet weak private var descriptionView: UIView!
+    @IBOutlet weak private var titlLb2: UILabel!
+    @IBOutlet weak private var titleLb: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       self.titleLb.spacing = 8
+        self.imgView.layer.cornerRadius = 5
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

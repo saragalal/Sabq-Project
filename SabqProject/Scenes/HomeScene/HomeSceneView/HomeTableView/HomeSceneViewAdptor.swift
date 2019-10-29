@@ -110,90 +110,43 @@ extension HomeSceneViewAdaptor: UITableViewDataSource, UITableViewDelegate {
             if let cellNumber = self.count(name: String.materials()), cellNumber != 0 {
                 return cellNumber
             }
-            return 1
+            return 2
         }
     }
-     //    swiftlint:disable cyclomatic_complexity
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if data == nil {
-        if indexPath.section == 0 {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: String.sliderTableCellIdentifier(),
-                                                    for: indexPath) as? SliderTableViewCell {
-            return cell
-          }
-        } else if indexPath.section == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShimmerCell",
-                                                        for: indexPath) as? NewsShimmerCell {
-               
-                return cell
-           }
-        }
-        fatalError("can't create cell")
+        return shimmerCells(indexPath: indexPath)
     } else {
         if indexPath.section == 0 {
-      if let cell = tableView.dequeueReusableCell(withIdentifier: String.sliderTableCellIdentifier(),
-                                                  for: indexPath) as? SliderTableViewCell {
-                if let sliderArray = self.getSlider() {
-                    cell.configureSliderCell(sliderArray: sliderArray)
-                }
-                return cell
-            }
-            fatalError("can't create cell")
+            return sliderCell(indexPath: indexPath)
         } else {
             if let item = self.getItemInMaterialArray(at: indexPath.row) {
                 if item.type == String.news() {
-     if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCellIdentifier(),
-                                                 for: indexPath) as? HomeTableViewCell {
-                        cell.configureCell(item: item)
-                        return cell
-                    }
-                    fatalError("can't create cell")
+                    return newsCell(indexPath: indexPath, item: item)
                 } else if item.type == String.videos() {
-if let cell = tableView.dequeueReusableCell(withIdentifier: String.videoTableCellIdentifier(),
-                                            for: indexPath) as? HomeVideoTableViewCell {
-                        if let item = self.getVideoArray() {
-                            cell.configureCell(videos: item)
-                        }
-                        return cell
-                    }
-                    fatalError("can't create cell")
+                    return videoCell(indexPath: indexPath)
                 } else if item.type == String.images() {
-if let cell = tableView.dequeueReusableCell(withIdentifier: String.imageTableCellIdentifier(),
-                                            for: indexPath) as? ImagesTableViewCell {
-                        if let item = self.getImagesArray() {
-                            cell.configureCell(images: item)
-                        }
-                        return cell
-                    }
-                    fatalError("can't create cell")
+                    return imagesCell(indexPath: indexPath)
                 } else if item.type == String.articles() {
-if let cell = tableView.dequeueReusableCell(withIdentifier: String.articleTableCellIdentifier(),
-                                            for: indexPath) as? ArticleTableViewCell {
-                        if let item = self.getArticlesArray() {
-                            cell.configureCell(articles: item)
-                        }
-                        return cell
-                    }
-                    fatalError("can't create cell")
+                    return articleCell(indexPath: indexPath)
                 }
             } else {
-if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCellIdentifier(),
-                                            for: indexPath) as? HomeTableViewCell {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCellIdentifier(),
+                                                            for: indexPath) as? HomeTableViewCell {
                     return cell
                 }
-           }
+            }
             fatalError("can't create cell")
         }
-      }
+    }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if data == nil {
             if indexPath.section == 0 {
-                return 350
-            } else {
-                return 100
+                return 400
             }
-        }
+        } else {
         if indexPath.section == 0 {
             return 500
         }
@@ -209,7 +162,72 @@ if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCell
                     return 0.8 * (self.view.view.frame.size.width)
                 }
             }
+          }
         }
         return UITableView.automaticDimension
+    }
+    private func sliderCell(indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.sliderTableCellIdentifier(),
+                                                    for: indexPath) as? SliderTableViewCell {
+            if let sliderArray = self.getSlider() {
+                cell.configureSliderCell(sliderArray: sliderArray)
+            }
+            return cell
+        }
+        fatalError("can't create cell")
+    }
+    private func newsCell(indexPath: IndexPath, item: Materials?) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.newsTableCellIdentifier(),
+                                                    for: indexPath) as? HomeTableViewCell {
+            cell.configureCell(item: item)
+            return cell
+        }
+        fatalError("can't create cell")
+    }
+    private func videoCell(indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier:
+            String.videoTableCellIdentifier(),
+                                                    for: indexPath) as? HomeVideoTableViewCell {
+            if let item = self.getVideoArray() {
+                cell.configureCell(videos: item)
+            }
+            return cell
+        }
+        fatalError("can't create cell")
+    }
+    private func imagesCell(indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.imageTableCellIdentifier(),
+                                                    for: indexPath) as? ImagesTableViewCell {
+            if let item = self.getImagesArray() {
+                cell.configureCell(images: item)
+            }
+            return cell
+        }
+        fatalError("can't create cell")
+    }
+    private func articleCell(indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: String.articleTableCellIdentifier(),
+                                                    for: indexPath) as? ArticleTableViewCell {
+            if let item = self.getArticlesArray() {
+                cell.configureCell(articles: item)
+            }
+            return cell
+        }
+        fatalError("can't create cell")
+    }
+    private func shimmerCells(indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "SliderShimmerCell",
+                                                        for: indexPath) as? SliderShimmerCell {
+                return cell
+            }
+        } else if indexPath.section == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "NewsShimmerCell",
+                                                        for: indexPath) as? NewsShimmerCell {
+                
+                return cell
+            }
+        }
+        fatalError("can't create cell")
     }
 }

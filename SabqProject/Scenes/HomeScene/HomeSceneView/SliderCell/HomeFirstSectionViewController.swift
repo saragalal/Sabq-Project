@@ -47,7 +47,7 @@ class HomeFirstSectionViewController: UIViewController {
                        timeLabel.text = "منذ " + str + "شهر"
                        }
                    } else if timeDiff?.weekOfMonth != nil, timeDiff?.weekOfMonth != 0 {
-                       if let str = (timeDiff?.month)?.numtoArabic() {
+                       if let str = (timeDiff?.weekOfMonth)?.numtoArabic() {
                        timeLabel.text = "منذ " + str + "اسبوع"
                        }
                    } else if timeDiff?.day != nil, timeDiff?.day != 0 {
