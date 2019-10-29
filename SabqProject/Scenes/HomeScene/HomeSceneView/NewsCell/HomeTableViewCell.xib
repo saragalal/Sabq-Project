@@ -34,6 +34,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="0Go-ww-ZQT">
                                 <rect key="frame" x="298" y="20" width="134" height="132"/>
@@ -43,6 +49,12 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" name="TitleColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmV-wP-SMQ">
                                 <rect key="frame" x="0.0" y="143.5" width="288" height="25"/>
@@ -53,6 +65,9 @@
                                             <constraint firstAttribute="height" constant="25" id="1jq-4m-O60"/>
                                             <constraint firstAttribute="width" constant="20" id="gXJ-o1-6T8"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggo-Zo-Fw1">
                                         <rect key="frame" x="40" y="0.0" width="248" height="25"/>
@@ -65,12 +80,21 @@
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_views_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7al-gK-U1N">
                                                                 <rect key="frame" x="90" y="3" width="30" height="19"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="١٢٣٤٥" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Fh-9dr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="88" height="25"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" name="backgroundColor"/>
@@ -84,18 +108,30 @@
                                                             <constraint firstAttribute="trailing" secondItem="7al-gK-U1N" secondAttribute="trailing" id="Rgj-oF-9NH"/>
                                                             <constraint firstItem="7al-gK-U1N" firstAttribute="top" secondItem="OCC-nw-m9u" secondAttribute="top" constant="3" id="op7-TG-DUO"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQT-EB-ULN">
                                                         <rect key="frame" x="128" y="0.0" width="120" height="25"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_time" translatesAutoresizingMaskIntoConstraints="NO" id="aPh-wr-lfu">
                                                                 <rect key="frame" x="90" y="0.0" width="30" height="25"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="منذ ساعة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTE-IA-7ij">
                                                                 <rect key="frame" x="0.0" y="1" width="88" height="23"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" name="backgroundColor"/>
@@ -109,8 +145,14 @@
                                                             <constraint firstItem="dTE-IA-7ij" firstAttribute="leading" secondItem="UQT-EB-ULN" secondAttribute="leading" id="jFF-57-xXW"/>
                                                             <constraint firstItem="dTE-IA-7ij" firstAttribute="top" secondItem="UQT-EB-ULN" secondAttribute="top" constant="1" id="kSf-6c-diZ"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="backgroundColor"/>
@@ -120,6 +162,9 @@
                                             <constraint firstAttribute="trailing" secondItem="Wnr-Oj-lX2" secondAttribute="trailing" id="7hV-qd-fYd"/>
                                             <constraint firstItem="Wnr-Oj-lX2" firstAttribute="leading" secondItem="ggo-Zo-Fw1" secondAttribute="leading" id="M3E-pa-QH5"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" name="backgroundColor"/>
@@ -131,6 +176,9 @@
                                     <constraint firstAttribute="bottom" secondItem="gPK-4E-N8R" secondAttribute="bottom" id="lB2-ST-MsK"/>
                                     <constraint firstAttribute="bottom" secondItem="ggo-Zo-Fw1" secondAttribute="bottom" id="pIt-TL-Q8f"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_play_1" translatesAutoresizingMaskIntoConstraints="NO" id="Apc-Q8-XdR">
                                 <rect key="frame" x="298" y="20" width="30" height="30"/>
@@ -138,6 +186,9 @@
                                     <constraint firstAttribute="width" constant="30" id="7Ke-8c-n0F"/>
                                     <constraint firstAttribute="height" constant="30" id="Cr5-jD-6Mc"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-category-shape" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-Gk-wzV">
                                 <rect key="frame" x="263" y="25" width="10" height="15"/>
@@ -145,6 +196,9 @@
                                     <constraint firstAttribute="width" constant="10" id="Oko-dW-kN0"/>
                                     <constraint firstAttribute="height" constant="15" id="bru-dp-20T"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MH1-sz-y1a" customClass="FBShimmeringView">
                                 <rect key="frame" x="298" y="11" width="149" height="170"/>
@@ -162,6 +216,9 @@
                                     <constraint firstItem="8xO-0u-1ef" firstAttribute="centerX" secondItem="MH1-sz-y1a" secondAttribute="centerX" id="q8B-bo-P8d"/>
                                     <constraint firstItem="8xO-0u-1ef" firstAttribute="centerY" secondItem="MH1-sz-y1a" secondAttribute="centerY" id="yIp-UR-o3C"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
@@ -194,6 +251,9 @@
                             <constraint firstItem="ZmV-wP-SMQ" firstAttribute="top" secondItem="z9P-e4-2mN" secondAttribute="bottom" constant="15" id="vth-YG-OEe"/>
                             <constraint firstAttribute="bottom" secondItem="MH1-sz-y1a" secondAttribute="bottom" constant="7.5" id="xXK-am-soC"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -202,8 +262,14 @@
                     <constraint firstAttribute="trailing" secondItem="2M6-cn-sV4" secondAttribute="trailing" id="dUW-hd-rpb"/>
                     <constraint firstAttribute="bottom" secondItem="2M6-cn-sV4" secondAttribute="bottom" id="hV3-Ue-9gc"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="bookmarkImg" destination="gPK-4E-N8R" id="P9K-CV-zhg"/>
                 <outlet property="categoryLb" destination="ywv-9e-woT" id="7bc-2r-YYO"/>

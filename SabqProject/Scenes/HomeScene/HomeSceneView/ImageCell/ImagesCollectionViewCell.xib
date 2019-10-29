@@ -23,6 +23,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_news-img_6" translatesAutoresizingMaskIntoConstraints="NO" id="qy3-mn-kIt">
                                 <rect key="frame" x="0.0" y="0.0" width="184" height="233"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="block_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="FmE-Cq-KCg">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="233"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-Z6-yAF">
                                 <rect key="frame" x="154" y="193" width="20" height="20"/>
                                 <constraints>
@@ -30,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="20" id="yZI-KO-fS2"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEx-VS-4vn" customClass="FBShimmeringView">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEx-VS-4vn" customClass="FBShimmeringView">
                                 <rect key="frame" x="0.0" y="0.0" width="184" height="233"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="wP6-mI-jPB">
@@ -58,6 +61,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FmE-Cq-KCg" firstAttribute="width" secondItem="qy3-mn-kIt" secondAttribute="width" id="2OY-CA-Zak"/>
+                            <constraint firstItem="FmE-Cq-KCg" firstAttribute="height" secondItem="qy3-mn-kIt" secondAttribute="height" id="3Jg-9f-fkf"/>
                             <constraint firstAttribute="bottom" secondItem="qy3-mn-kIt" secondAttribute="bottom" id="3jS-Ye-W0J"/>
                             <constraint firstItem="kf5-Z6-yAF" firstAttribute="leading" secondItem="H5Y-Vi-q57" secondAttribute="trailing" constant="8" id="4cp-7H-nZb"/>
                             <constraint firstItem="SEx-VS-4vn" firstAttribute="leading" secondItem="pXg-dV-mbr" secondAttribute="leading" id="86U-gL-Hed"/>
@@ -66,6 +71,8 @@
                             <constraint firstItem="SEx-VS-4vn" firstAttribute="top" secondItem="pXg-dV-mbr" secondAttribute="top" id="KOg-r5-KcT"/>
                             <constraint firstItem="H5Y-Vi-q57" firstAttribute="top" secondItem="90e-Hd-nEM" secondAttribute="bottom" constant="5" id="KiT-vF-R0g"/>
                             <constraint firstItem="wP6-mI-jPB" firstAttribute="top" secondItem="pXg-dV-mbr" secondAttribute="top" constant="31" id="Ma0-iV-pz4"/>
+                            <constraint firstItem="FmE-Cq-KCg" firstAttribute="top" secondItem="pXg-dV-mbr" secondAttribute="top" id="STc-6P-Z5b"/>
+                            <constraint firstItem="FmE-Cq-KCg" firstAttribute="leading" secondItem="pXg-dV-mbr" secondAttribute="leading" id="VaX-Pw-gf2"/>
                             <constraint firstAttribute="trailing" secondItem="kf5-Z6-yAF" secondAttribute="trailing" constant="10" id="Wqy-uK-uid"/>
                             <constraint firstItem="wP6-mI-jPB" firstAttribute="leading" secondItem="pXg-dV-mbr" secondAttribute="leading" constant="8" id="g0s-ni-SmD"/>
                             <constraint firstAttribute="bottom" secondItem="H5Y-Vi-q57" secondAttribute="bottom" constant="17" id="gIN-X0-jLN"/>
@@ -98,6 +105,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="block_overlay" width="301" height="349"/>
         <image name="ic_gallery" width="25" height="25"/>
         <image name="img_news-img_6" width="100" height="100"/>
         <image name="loaded" width="49" height="66"/>

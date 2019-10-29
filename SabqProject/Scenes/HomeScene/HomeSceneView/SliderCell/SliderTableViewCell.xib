@@ -24,6 +24,9 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="500" id="S7a-R3-rq0"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="NVZ-hG-OiE">
                         <rect key="frame" x="174" y="200" width="39" height="37"/>
@@ -36,11 +39,17 @@
                     <constraint firstAttribute="trailing" secondItem="NVZ-hG-OiE" secondAttribute="trailing" constant="174" id="mE4-E9-AOJ"/>
                     <constraint firstAttribute="trailing" secondItem="xHK-KP-iK1" secondAttribute="trailing" id="nkA-fs-Hoz"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <constraints>
                 <constraint firstItem="xHK-KP-iK1" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" id="WjR-kq-rCv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="cellView" destination="xHK-KP-iK1" id="2py-Vu-GDM"/>
                 <outlet property="sectionOnePageControl" destination="NVZ-hG-OiE" id="nVU-tL-ovK"/>

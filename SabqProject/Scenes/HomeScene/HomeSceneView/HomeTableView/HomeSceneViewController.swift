@@ -7,16 +7,20 @@
 //
 
 import UIKit
-import Moya
+import Windless
 class HomeSceneViewController: BaseViewController, HomeSceneViewProtocol {
     @IBOutlet weak private var homeTableView: UITableView!
-    @IBOutlet weak private var shimmerView: FBShimmeringView!
     private var presenter: HomeScenePresenterProtocol?
     private var homeAdaptor: HomeSceneViewAdaptor?
     private var identifier = ""
     private lazy var shimmer = ShimmerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
+  
+homeTableView.register(UINib(nibName: "SliderShimmerCell",
+                             bundle: nil), forCellReuseIdentifier: "SliderShimmerCell")
+homeTableView.register(UINib(nibName: "NewsShimmerCell",
+                             bundle: nil), forCellReuseIdentifier: "NewsShimmerCell")
 homeTableView.register(UINib(nibName: String.sliderTableCellIdentifier(),
                              bundle: nil), forCellReuseIdentifier: String.sliderTableCellIdentifier())
  homeTableView.register(UINib(nibName: String.newsTableCellIdentifier(),
@@ -31,8 +35,8 @@ self.homeTableView.estimatedRowHeight = 120.0
 self.homeTableView.rowHeight = UITableView.automaticDimension
 homeAdaptor = HomeSceneViewAdaptor()
 homeAdaptor?.setAdaptor(view: self, tableView: homeTableView, reloadData: reloadTableView)
-        shimmerView.isHidden = true
         showLoading()
+        reloadTableView()
         presenter?.viewDidLoad()
     }
     func setPresenter(presenter: HomeScenePresenter) {
@@ -56,12 +60,18 @@ homeAdaptor?.setAdaptor(view: self, tableView: homeTableView, reloadData: reload
         self.homeTableView.reloadData()
     }
     override func showLoading() {
+        homeTableView.windless.apply {
+            $0.beginTime = 1
+            $0.pauseDuration = 0.2
+            $0.duration = 10
+            $0.animationLayerOpacity = 0.7
+        }
+        .start()
+//       shimmer.view.frame = self.view.frame
+//         shimmer.view.start()
+//        self.view.addSubview(shimmer.view)
+        
        // shimmerView.isHidden = false
-         
-        shimmer.view.frame = self.view.frame
-         shimmer.view.start()
-        self.view.addSubview(shimmer.view)
-       
 //        shimmerView.contentView = shimmer.view
 //        shimmerView.isShimmering = true
 //        shimmerView.shimmeringPauseDuration = 0.2
@@ -72,8 +82,10 @@ homeAdaptor?.setAdaptor(view: self, tableView: homeTableView, reloadData: reload
 //        shimmerView.shimmeringDirection = .right
     }
     override func hideLoading() {
-        shimmer.view.stop()
-        shimmer.view.removeFromSuperview()
+        homeTableView.windless.end()
+//        shimmer.view.stop()
+//        shimmer.view.removeFromSuperview()
+        
 //        shimmerView.isShimmering = false
 //        shimmerView.isHidden = true
     }

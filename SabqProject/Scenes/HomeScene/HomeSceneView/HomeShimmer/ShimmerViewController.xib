@@ -45,7 +45,7 @@
                             <rect key="frame" x="26" y="52" width="343" height="200"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="PuY-M2-e1e">
-                                    <rect key="frame" x="147" y="67" width="49.000000000000014" height="66"/>
+                                    <rect key="frame" x="147" y="67" width="49" height="66"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="66" id="8vh-B1-hMI"/>
                                         <constraint firstAttribute="width" constant="49" id="Z9A-TI-grE"/>
@@ -72,7 +72,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="xb1-yE-JXe"/>
                             </constraints>
-                            <mutableString key="text">في مقال مطول حاول الكاتب المصري الشهير عماد الدين أديب رسم صورة عن قرب لولي العهد الأمير محمد بن سلمان، عارضاً رؤيته للمشهد السعودي الحالي، ومحاولاً أن يضع نقاطاً محددة تحدد ملامح شخصية الأمير الذي قال عنه: "يحسن الإنصات والاستماع والتعلم والاستشارة، وتزعجه 3 أمور، ويسابق الزمن بشكل مستمر مؤمناً بأن زمن السعودية المجاملة يجب أن ينتقل من المساندة من الخطوط الخلفية إلى صدر المواجهات في العلن، فهو يعمل 18 ساعة يومياً يصل الليل بالنهار، يقطع المنطقة والعالم ذهاباً وإياباً من أجل النجاح، وتحقيق ثقة مليك البلاد فيه، وثقة الأب في الابن، والشعب في ولي الع</mutableString>
+                            <string key="text">في مقال مطول حاول الكاتب المصري الشهير عماد الدين أديب رسم صورة عن قرب لولي العهد الأمير محمد بن سلمان، عارضاً رؤيته للمشهد السعودي الحالي، ومحاولاً أن يضع نقاطاً محددة تحدد ملامح شخصية الأمير الذي قال عنه: "يحسن الإنصات والاستماع والتعلم والاستشارة، وتزعجه 3 أمور، ويسابق الزمن بشكل مستمر مؤمناً بأن زمن السعودية المجاملة يجب أن ينتقل من المساندة من الخطوط الخلفية إلى صدر المواجهات في العلن، فهو يعمل 18 ساعة يومياً يصل الليل بالنهار، يقطع المنطقة والعالم ذهاباً وإياباً من أجل النجاح، وتحقيق ثقة مليك البلاد فيه، وثقة الأب في الابن، والشعب في ولي الع</string>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>

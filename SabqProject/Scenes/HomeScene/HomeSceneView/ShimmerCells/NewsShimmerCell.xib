@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsShimmerCell" rowHeight="98" id="KGk-i7-Jjw" customClass="NewsShimmerCell" customModule="SabqProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="491" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="491" height="98"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3b-yD-rl5">
+                        <rect key="frame" x="0.0" y="0.0" width="491" height="98"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaded" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-oG-mYT">
+                                <rect key="frame" x="386" y="15" width="90" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="1Rg-97-vxz"/>
+                                    <constraint firstAttribute="height" constant="70" id="Ezw-v6-FJk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الشورى يوافق على تعديلات نظام صندوق التنمية الصناعية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nov-kZ-SVq">
+                                <rect key="frame" x="12" y="15" width="366" height="38.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" name="TitleColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqh-I6-Eyk">
+                                <rect key="frame" x="228" y="67.5" width="150" height="12"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="V61-PX-J9I"/>
+                                    <constraint firstAttribute="height" constant="12" id="snu-jz-cs2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T8J-oG-mYT" secondAttribute="trailing" constant="15" id="CG2-t1-5oM"/>
+                            <constraint firstItem="tqh-I6-Eyk" firstAttribute="trailing" secondItem="Nov-kZ-SVq" secondAttribute="trailing" id="K5Z-IR-Ogq"/>
+                            <constraint firstItem="T8J-oG-mYT" firstAttribute="top" secondItem="Q3b-yD-rl5" secondAttribute="top" constant="15" id="ks2-lN-i83"/>
+                            <constraint firstItem="tqh-I6-Eyk" firstAttribute="top" secondItem="Nov-kZ-SVq" secondAttribute="bottom" constant="14" id="lZm-av-jcV"/>
+                            <constraint firstAttribute="bottom" secondItem="T8J-oG-mYT" secondAttribute="bottom" constant="13" id="ojo-or-Hbf"/>
+                            <constraint firstItem="T8J-oG-mYT" firstAttribute="leading" secondItem="Nov-kZ-SVq" secondAttribute="trailing" constant="8" id="tlj-wM-BUA"/>
+                            <constraint firstItem="Nov-kZ-SVq" firstAttribute="leading" secondItem="Q3b-yD-rl5" secondAttribute="leading" constant="12" id="xFt-w6-BzD"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Q3b-yD-rl5" secondAttribute="bottom" id="3Cg-rg-cze"/>
+                    <constraint firstItem="Q3b-yD-rl5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="3K5-di-S9r"/>
+                    <constraint firstItem="Q3b-yD-rl5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ABO-yV-Jjx"/>
+                    <constraint firstAttribute="trailing" secondItem="Q3b-yD-rl5" secondAttribute="trailing" id="bRd-a6-GeQ"/>
+                    <constraint firstItem="Nov-kZ-SVq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="eOl-nX-STl"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imageView" destination="T8J-oG-mYT" id="QZ3-rS-wMo"/>
+                <outlet property="newsImageView" destination="T8J-oG-mYT" id="JKK-WV-TOW"/>
+                <outlet property="titleLabel" destination="Nov-kZ-SVq" id="Yox-vz-QeB"/>
+            </connections>
+            <point key="canvasLocation" x="-38.405797101449281" y="103.79464285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="loaded" width="49" height="66"/>
+        <namedColor name="TitleColor">
+            <color red="0.097999997437000275" green="0.097999997437000275" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
