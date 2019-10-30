@@ -37,10 +37,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rau-k1-bWx">
-                                        <rect key="frame" x="287" y="53" width="110" height="3"/>
+                                        <rect key="frame" x="289" y="51" width="110" height="4"/>
                                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="H2Z-1z-Uqj"/>
+                                            <constraint firstAttribute="height" constant="4" id="H2Z-1z-Uqj"/>
                                             <constraint firstAttribute="width" constant="110" id="Xld-Go-C1h"/>
                                         </constraints>
                                     </view>
@@ -58,10 +58,10 @@
                                     <constraint firstItem="Zmz-qy-kaM" firstAttribute="leading" secondItem="MMS-YU-Gfc" secondAttribute="leading" constant="15" id="SA2-5J-qOS"/>
                                     <constraint firstItem="llq-Pg-0c7" firstAttribute="leading" secondItem="MMS-YU-Gfc" secondAttribute="leading" id="Z7A-qZ-Pgs"/>
                                     <constraint firstItem="llq-Pg-0c7" firstAttribute="top" secondItem="Zmz-qy-kaM" secondAttribute="bottom" constant="13" id="ZOP-eo-HAy"/>
-                                    <constraint firstItem="llq-Pg-0c7" firstAttribute="top" secondItem="rau-k1-bWx" secondAttribute="bottom" constant="-2" id="ias-3X-uQ4"/>
+                                    <constraint firstItem="llq-Pg-0c7" firstAttribute="top" secondItem="rau-k1-bWx" secondAttribute="bottom" constant="-1" id="ias-3X-uQ4"/>
                                     <constraint firstAttribute="trailing" secondItem="llq-Pg-0c7" secondAttribute="trailing" id="qeZ-1e-t49"/>
                                     <constraint firstItem="c2F-sa-iVO" firstAttribute="top" secondItem="MMS-YU-Gfc" secondAttribute="top" constant="20" id="r1H-zD-9l9"/>
-                                    <constraint firstAttribute="trailing" secondItem="rau-k1-bWx" secondAttribute="trailing" constant="12" id="tQn-Ij-66g"/>
+                                    <constraint firstAttribute="trailing" secondItem="rau-k1-bWx" secondAttribute="trailing" constant="10" id="tQn-Ij-66g"/>
                                     <constraint firstAttribute="trailing" secondItem="c2F-sa-iVO" secondAttribute="trailing" constant="15" id="xEB-Yi-bZd"/>
                                 </constraints>
                             </view>
@@ -105,7 +105,7 @@
     </objects>
     <resources>
         <namedColor name="collectionBackground">
-            <color red="0.20784313725490194" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20800000429153442" green="0.20800000429153442" blue="0.20800000429153442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
