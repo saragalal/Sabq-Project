@@ -141,7 +141,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="backgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="vvW-dA-SHr" secondAttribute="trailing" id="3Jb-72-0Td"/>
                                 <constraint firstItem="vvW-dA-SHr" firstAttribute="top" secondItem="lJe-LJ-C8j" secondAttribute="top" id="Aq8-CI-81u"/>

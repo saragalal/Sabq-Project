@@ -23,7 +23,7 @@ return try NSAttributedString(data: data,
         return htmlToAttributedString?.string ?? ""
     }
     
-    /// Returns a date from a string in MMMM dd, yyyy. Will return today's date if input is invalid.
+
     var asDate: Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm ss"
