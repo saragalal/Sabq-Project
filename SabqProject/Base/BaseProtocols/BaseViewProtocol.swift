@@ -9,12 +9,12 @@
 import Foundation
  @objc
 protocol BaseViewProtocol {
-    @objc
-    optional func showLoading(allowNavigation: Bool)
+   @objc
+    optional func showLoading()
     @objc
     optional func hideLoading()
     @objc
-    optional func loadDataSuccess(date:Any)
+    optional func loadDataSuccess(date: Any)
     @objc
     optional func loadDataFailed(with error: Error?)
     @objc

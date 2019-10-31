@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct BaseModel: BaseModelProtocol{
+struct BaseModel: BaseModelProtocol {
     
 }

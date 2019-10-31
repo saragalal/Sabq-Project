@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol DetailsSceneModelProtocol: BaseModelProtocol{
+protocol DetailsSceneModelProtocol: BaseModelProtocol {
     
 }

@@ -8,13 +8,10 @@
 
 import Foundation
 import UIKit
-class BaseViewController : UIViewController, BaseViewProtocol {
-    var presenter:BasePresenter?
+
+class BaseViewController: UIViewController, BaseViewProtocol {
     
-    public func setPresenter (presenter: BasePresenter) {
-        self.presenter = presenter
-    }
-    func showLoading(allowNavigation: Bool) {
+    func showLoading() {
         print("showLoading")
     }
     func hideLoading() {
@@ -29,7 +26,7 @@ class BaseViewController : UIViewController, BaseViewProtocol {
     func showSuccessMessage() {
         print("showSuccessMessage")
     }
-    func showErrorMessage() {
+    func showErrorMessage(title: String?, message: String?) {
         print("showErrorMessage")
     }
     

@@ -9,5 +9,8 @@
 import Foundation
 
 protocol HomeSceneViewProtocol: BaseViewProtocol {
-    
+    func addHomeResponse(response: HomeMaterialResponse?)
+    func addVideoArray(videos: [Comics?]?)
+    func addImagesArray(images: [Comics?]?)
+    func addArticleArray(articles: [Materials?]?)
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-class BasePresenter : BasePresenterProtocol {
-   
-    typealias View = BaseViewController
-    typealias Model = BaseModel
-    var view: BaseViewController?
-    var model: BaseModel
-    required init(view: BaseViewController, model: BaseModel) {
+class BasePresenter: BasePresenterProtocol {
+
+    var view: BaseViewProtocol?
+    var model: BaseModelProtocol
+    required init(view: BaseViewProtocol, model: BaseModelProtocol) {
         self.view = view
         self.model = model
     }
-   
+    func viewDidLoad() {
+        
+    }
 }

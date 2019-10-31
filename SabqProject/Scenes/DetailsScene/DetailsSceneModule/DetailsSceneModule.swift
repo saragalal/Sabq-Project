@@ -9,9 +9,9 @@
 import Foundation
 
 class DetailsSceneModule {
-    class func createHomeModule()  ->DetailsSceneViewController{
+    class func createHomeModule() -> DetailsSceneViewController {
         let view = DetailsSceneViewController()
-        let model = DetailsSceneModel()
+        //let model = DetailsSceneModel()
         //        let presenter = HomeScenePresenter(view: view ,model: model)
         //        view.setPresenter(presenter: presenter)
         return view
